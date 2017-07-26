@@ -1,7 +1,5 @@
 module Teacher
   class FlashCardsController < ApplicationController
-    before_action :set_flash_card, only: [:show, :update, :destroy]
-
     def index
       @flash_cards = FlashCard.all
 
@@ -9,6 +7,8 @@ module Teacher
     end
 
     def show
+      @flash_card = FlashCard.find(params[:id])
+
       render json: @flash_card
     end
 
@@ -23,17 +23,16 @@ module Teacher
     end
 
     def destroy
+      @flash_card = FlashCard.find(params[:id])
       @flash_card.destroy
+
+      render :ok
     end
 
     private
-    def set_flash_card
-      @flash_card = FlashCard.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
     def flash_card_params
-      params.fetch(:flash_card, {}).permit(:face, :back)
+      params.require(:flash_card).permit(:face, :back)
     end
   end
 end
