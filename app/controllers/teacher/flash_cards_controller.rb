@@ -14,6 +14,9 @@ module Teacher
 
     def create
       @flash_card = FlashCard.new(flash_card_params)
+      if @flash_card.category_id.nil?
+        @flash_card.category = Category.find_by_is_default(true)
+      end
 
       if @flash_card.save
         render json: @flash_card, status: :created, location: @flash_card
@@ -32,7 +35,7 @@ module Teacher
     private
 
     def flash_card_params
-      params.require(:flash_card).permit(:face, :back)
+      params.require(:flash_card).permit(:face, :back, :category_id)
     end
   end
 end

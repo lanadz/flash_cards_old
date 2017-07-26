@@ -37,6 +37,10 @@ RSpec.describe "FlashCards", type: :request do
       }
     end
 
+    before do
+      create :category, is_default: true
+    end
+
     let(:response_json) do
       {face: 'Face', back: 'Back'}.to_json
     end
