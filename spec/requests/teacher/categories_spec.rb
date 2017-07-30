@@ -42,7 +42,7 @@ RSpec.describe "Categories", type: :request do
           }
       }
     end
-    
+
     let(:response_json) do
       {name: 'Math', is_default: false}.to_json
     end
@@ -53,13 +53,4 @@ RSpec.describe "Categories", type: :request do
       expect(response.body).to eq response_json
     end
   end
-
-  # describe "DELETE teacher/flash_cards/:id" do
-  #   let(:flash_card) { create :flash_card }
-  #
-  #   it "deletes requested card" do
-  #     delete teacher_flash_card_path(flash_card)
-  #     expect(response).to have_http_status(:ok)
-  #   end
-  # end
 end

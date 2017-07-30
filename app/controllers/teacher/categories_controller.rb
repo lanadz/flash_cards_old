@@ -22,13 +22,6 @@ module Teacher
       end
     end
 
-    def destroy
-      @category = Category.find(params[:id])
-      @category.destroy
-
-      render :ok
-    end
-
     private
 
     def category_params
