@@ -8,9 +8,9 @@ module Teacher
 
     def show
       @category = Category.find(params[:id])
-      @flash_cards = @category.flash_cards
+      # @flash_cards = @category.flash_cards
 
-      render json: @category
+      render json: @category, serializer: CategoryWithCardsSerializer
     end
 
     def create

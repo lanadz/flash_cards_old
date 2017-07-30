@@ -17,14 +17,12 @@ RSpec.describe "Categories", type: :request do
     let!(:flash_cards) { create :flash_card, category: category }
     let(:response_json) do
       {
-        category: {
-          name: 'English',
-          is_default: false,
-          flash_cards: {
-            face: 'Face',
-            back: 'Back'
-          }
-        }
+        name: 'English',
+        is_default: false,
+        flash_cards: [{
+          face: '1+1',
+          back: '=2'
+        }]
       }.to_json
     end
 
