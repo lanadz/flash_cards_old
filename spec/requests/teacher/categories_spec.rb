@@ -8,7 +8,7 @@ RSpec.describe "Categories", type: :request do
     it "returns all created categories" do
       get teacher_categories_path
       expect(response).to have_http_status(:ok)
-      # expect(response.body).to eq response_json
+      expect(response.body).to eq response_json
     end
   end
 
