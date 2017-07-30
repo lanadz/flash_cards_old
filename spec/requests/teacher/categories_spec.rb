@@ -32,33 +32,28 @@ RSpec.describe "Categories", type: :request do
       expect(response.body).to eq response_json
     end
   end
-  #
-  # describe "POST teacher/flash_cards" do
-  #   let(:params) do
-  #     {
-  #       flash_card:
-  #         {
-  #           face: 'Face',
-  #           back: 'Back'
-  #         }
-  #     }
-  #   end
-  #
-  #   before do
-  #     create :category, is_default: true
-  #   end
-  #
-  #   let(:response_json) do
-  #     {face: 'Face', back: 'Back'}.to_json
-  #   end
-  #
-  #   it "creates and returns card" do
-  #     post teacher_flash_cards_path(params)
-  #     expect(response).to have_http_status(:created)
-  #     expect(response.body).to eq response_json
-  #   end
-  # end
-  #
+
+  describe "POST teacher/categories" do
+    let(:params) do
+      {
+        category:
+          {
+            name: 'Math'
+          }
+      }
+    end
+    
+    let(:response_json) do
+      {name: 'Math', is_default: false}.to_json
+    end
+
+    it "creates and returns category" do
+      post teacher_categories_path(params)
+      expect(response).to have_http_status(:created)
+      expect(response.body).to eq response_json
+    end
+  end
+
   # describe "DELETE teacher/flash_cards/:id" do
   #   let(:flash_card) { create :flash_card }
   #
