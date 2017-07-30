@@ -16,7 +16,7 @@ module Teacher
       @category = Category.new(category_params)
 
       if @category.save
-        render json: @category, status: :created, location: @category
+        render json: @category, status: :created, location: [:teacher, @category]
       else
         render json: @category.errors, status: :unprocessable_entity
       end
