@@ -1,22 +1,19 @@
 class DefaultStrategy
-  def initialize(flash_cards)
+  def initialize(flash_cards, number_of_cards = 10)
     @flash_cards = flash_cards
+    @number_of_cards = number_of_cards
   end
 
   def cards
-    prepare(10)
+    flash_cards.sample(length)
   end
 
   private
 
-  attr_reader :flash_cards
+  attr_reader :flash_cards, :number_of_cards
 
-  def prepare(n)
-    flash_cards.sample(amount(n))
+  def length
+    number_of_cards > flash_cards.length ? flash_cards.length : number_of_cards
   end
 
-  def amount(n)
-    length = flash_cards.length
-    n > length ? length : n
-  end
 end
