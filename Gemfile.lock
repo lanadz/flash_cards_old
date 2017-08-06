@@ -86,6 +86,7 @@ GEM
       slop (~> 3.4)
     puma (3.9.1)
     rack (2.0.3)
+    rack-cors (1.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.1.2)
@@ -166,6 +167,7 @@ DEPENDENCIES
   pg (~> 0.19.0)
   pry
   puma (~> 3.7)
+  rack-cors
   rails (~> 5.1.2)
   rspec-rails (~> 3.5)
   spring
@@ -176,4 +178,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
