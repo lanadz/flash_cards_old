@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "LearningSessions", type: :request do
   describe "POST /learning_sessions" do
-    let!(:flash_cards) { create_list :flash_card, 2, category: category }
+    let!(:flash_cards) { create :flash_card, category: category }
     let(:category) { create :category }
     let(:response_json) do
-      {flash_card_ids: flash_cards.pluck(:id)}.to_json
+      {flash_card_ids: [flash_cards.id]}.to_json
     end
 
     it "creates new learning session and returns flash_card_ids" do
