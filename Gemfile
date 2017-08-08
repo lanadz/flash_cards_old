@@ -34,6 +34,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'pry'
+  gem 'rspec_api_documentation'
 end
 
 group :development do
