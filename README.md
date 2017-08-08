@@ -1,24 +1,36 @@
-# README
+# Dev notes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##Access to existing documentation
+```file:///.../.../flash_cards/doc/api/index.html``` - your local path to that index html 
 
-* Ruby version
+## Generate Documentation
+After developing feature you need to write acceptance tests as following:
+```ruby
+require 'rails_helper'
+require 'rspec_api_documentation/dsl'
 
-* System dependencies
 
-* Configuration
+resource "Categories for Student" do
+  let!(:category) { create :category }
+  let(:response_json) do
+    [
+      {
+        id: category.id,
+        name: 'English',
+        is_default: false
+      }
+    ].to_json
+  end
 
-* Database creation
+  get "/categories" do
+    example "Listing Categories" do
+      do_request
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+      expect(status).to eq 200
+      expect(response_json).to eq response_json
+    end
+  end
+end
+```
+Once you are done with tests run rake task `rake docs:generate` to generate new docs
