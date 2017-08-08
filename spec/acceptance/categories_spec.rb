@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
-
 resource "Categories for Student" do
   let!(:category) { create :category }
   let(:response_json) do
