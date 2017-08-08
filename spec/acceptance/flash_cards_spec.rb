@@ -11,7 +11,7 @@ resource "FlashCards for Student" do
   get '/flash_cards/:id' do
     example_request 'Show card' do
       expect(status).to eq 200
-      expect(response_json).to eq response_json
+      expect(response_body).to eq response_json
     end
   end
 end

@@ -18,7 +18,7 @@ resource "Categories for Student" do
       do_request
 
       expect(status).to eq 200
-      expect(response_json).to eq response_json
+      expect(response_body).to eq response_json
     end
   end
 
@@ -41,7 +41,7 @@ resource "Categories for Student" do
       do_request
 
       expect(status).to eq 200
-      expect(response_json).to eq response_json
+      expect(response_body).to eq response_json
     end
   end
 end
