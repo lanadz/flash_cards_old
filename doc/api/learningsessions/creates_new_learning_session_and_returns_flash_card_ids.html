@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Categories for Student API</title>
+    <title>LearningSessions API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,45 +106,65 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Categories for Student API</h1>
+      <h1>LearningSessions API</h1>
 
       <div class="article">
-        <h2>Listing Categories</h2>
-        <h3>GET /categories</h3>
+        <h2>creates new learning session and returns flash_card_ids</h2>
+        <h3>POST /learning_sessions</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">category_id</span>
+                </td>
+                <td>
+                  <span class="description">Category ID</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Host: example.org
+Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /categories</pre>
+          <pre class="request route highlight">POST /learning_sessions</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">category_id=1085</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a6972cc6dd091c01da56a5df7f988e26&quot;
+ETag: W/&quot;c69939c23b9bd5e780be66e96b468aef&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a50301d8-e027-45ba-af9c-e6eb47a7e21b
-X-Runtime: 0.015601
+X-Request-Id: 5e620a35-d535-4710-b130-1aa406130734
+X-Runtime: 0.014107
 Vary: Origin
-Content-Length: 49</pre>
+Content-Length: 24</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-  {
-    &quot;id&quot;: 1082,
-    &quot;name&quot;: &quot;English&quot;,
-    &quot;is_default&quot;: false
-  }
-]</pre>
+              <pre class="response body">{
+  &quot;flash_card_ids&quot;: [
+    949
+  ]
+}</pre>
       </div>
     </div>
   </body>

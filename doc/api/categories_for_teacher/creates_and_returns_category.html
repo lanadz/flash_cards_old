@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Categories for Student API</title>
+    <title>Categories for Teacher API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,45 +106,66 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Categories for Student API</h1>
+      <h1>Categories for Teacher API</h1>
 
       <div class="article">
-        <h2>Listing Categories</h2>
-        <h3>GET /categories</h3>
+        <h2>creates and returns category</h2>
+        <h3>POST teacher/categories</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">category[name]</span>
+                </td>
+                <td>
+                  <span class="description">Name of category</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Host: example.org
+Content-Type: application/x-www-form-urlencoded
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /categories</pre>
+          <pre class="request route highlight">POST teacher/categories</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">category[name]=Math</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a6972cc6dd091c01da56a5df7f988e26&quot;
+              <pre class="response headers">Location: http://example.org/teacher/categories/1089
+Content-Type: application/json; charset=utf-8
+ETag: W/&quot;3e7a0145721bd3c2538305fd09017e4b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a50301d8-e027-45ba-af9c-e6eb47a7e21b
-X-Runtime: 0.015601
+X-Request-Id: 49b3115e-9cd3-48ff-8306-a1ea5bc8a7d7
+X-Runtime: 0.004614
 Vary: Origin
-Content-Length: 49</pre>
+Content-Length: 44</pre>
             <h4>Status</h4>
-            <pre class="response status">200 OK</pre>
+            <pre class="response status">201 Created</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-  {
-    &quot;id&quot;: 1082,
-    &quot;name&quot;: &quot;English&quot;,
-    &quot;is_default&quot;: false
-  }
-]</pre>
+              <pre class="response body">{
+  &quot;id&quot;: 1089,
+  &quot;name&quot;: &quot;Math&quot;,
+  &quot;is_default&quot;: false
+}</pre>
       </div>
     </div>
   </body>

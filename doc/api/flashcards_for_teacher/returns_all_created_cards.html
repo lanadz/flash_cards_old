@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Categories for Student API</title>
+    <title>FlashCards for Teacher API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Categories for Student API</h1>
+      <h1>FlashCards for Teacher API</h1>
 
       <div class="article">
-        <h2>Listing Categories</h2>
-        <h3>GET /categories</h3>
+        <h2>returns all created cards</h2>
+        <h3>GET teacher/flash_cards</h3>
 
 
 
@@ -121,7 +121,7 @@ table th, table td {
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /categories</pre>
+          <pre class="request route highlight">GET teacher/flash_cards</pre>
 
 
 
@@ -129,20 +129,19 @@ Cookie: </pre>
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a6972cc6dd091c01da56a5df7f988e26&quot;
+ETag: W/&quot;6ab71920c58a736f27ce36fbc8d637b6&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a50301d8-e027-45ba-af9c-e6eb47a7e21b
-X-Runtime: 0.015601
+X-Request-Id: e7bd7f54-c712-453c-9ca6-38d75f4a8cf9
+X-Runtime: 0.003309
 Vary: Origin
-Content-Length: 49</pre>
+Content-Length: 28</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">[
   {
-    &quot;id&quot;: 1082,
-    &quot;name&quot;: &quot;English&quot;,
-    &quot;is_default&quot;: false
+    &quot;face&quot;: &quot;1+1&quot;,
+    &quot;back&quot;: &quot;=2&quot;
   }
 ]</pre>
       </div>
