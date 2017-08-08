@@ -3,7 +3,15 @@ require 'rails_helper'
 RSpec.describe "Categories", type: :request do
   describe "GET categories" do
     let!(:category) { create :category }
-    let(:response_json) { [{name: 'English', is_default: false}].to_json }
+    let(:response_json) do
+      [
+        {
+          id: category.id,
+          name: 'English',
+          is_default: false
+        }
+      ].to_json
+    end
 
     it "returns all created categories" do
       get categories_path

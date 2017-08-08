@@ -3,8 +3,15 @@ require 'rails_helper'
 RSpec.describe "Categories", type: :request do
   describe "GET teacher/categories" do
     let!(:category) { create :category }
-    let(:response_json) { [{name: 'English', is_default: false}].to_json }
-
+    let(:response_json) do
+      [
+        {
+          id: category.id,
+          name: 'English',
+          is_default: false
+        }
+      ].to_json
+    end
     it "returns all created categories" do
       get teacher_categories_path
       expect(response).to have_http_status(:ok)
@@ -43,14 +50,17 @@ RSpec.describe "Categories", type: :request do
       }
     end
 
-    let(:response_json) do
-      {name: 'Math', is_default: false}.to_json
+    let(:response_obj) do
+      {
+        'name' => 'Math',
+        'is_default' => false
+      }
     end
 
     it "creates and returns category" do
       post teacher_categories_path(params)
       expect(response).to have_http_status(:created)
-      expect(response.body).to eq response_json
+      expect(JSON.parse(response.body)).to include response_obj
     end
   end
 end
