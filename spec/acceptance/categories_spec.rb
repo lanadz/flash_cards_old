@@ -23,6 +23,8 @@ resource "Categories for Student" do
   end
 
   get "/categories/:id" do
+    parameter :id, 'ID of category', required: true
+
     let(:category) { create :category }
     let(:id) { category.id }
     let!(:flash_cards) { create :flash_card, category: category }

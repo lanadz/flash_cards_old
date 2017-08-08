@@ -3,7 +3,7 @@ require 'rspec_api_documentation/dsl'
 
 resource "LearningSessions" do
   post '/learning_sessions' do
-    parameter :category_id, "Category ID"
+    parameter :category_id, "Category ID", required: true
 
     let!(:flash_cards) { create :flash_card, category: category }
     let(:category) { create :category }

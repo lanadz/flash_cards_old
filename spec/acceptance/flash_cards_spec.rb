@@ -9,6 +9,8 @@ resource "FlashCards for Student" do
   let(:id) { flash_card.id }
 
   get '/flash_cards/:id' do
+    parameter :id, 'ID of flash card', required: true
+
     example_request 'Show card' do
       expect(status).to eq 200
       expect(response_body).to eq response_json
