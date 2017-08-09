@@ -4,13 +4,15 @@ require 'rspec_api_documentation/dsl'
 resource "Categories for Student" do
   let!(:category) { create :category }
   let(:response_json) do
-    [
-      {
-        id: category.id,
-        name: 'English',
-        is_default: false
-      }
-    ].to_json
+    {
+      data: [
+        {
+          name: 'English',
+          is_default: false,
+          id: category.id
+        }
+      ]
+    }.to_json
   end
 
   get "/categories" do
@@ -30,12 +32,16 @@ resource "Categories for Student" do
     let!(:flash_cards) { create :flash_card, category: category }
     let(:response_json) do
       {
-        name: 'English',
-        is_default: false,
-        flash_cards: [{
-                        face: '1+1',
-                        back: '=2'
-                      }]
+        data: {
+          name: 'English',
+          is_default: false,
+          flash_cards: [
+            {
+              face: '1+1',
+              back: '=2'
+            }
+          ]
+        }
       }.to_json
     end
 

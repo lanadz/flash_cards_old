@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    categories = Category.all
 
-    render json: @categories
+    render json: CategoriesSerializer.new(categories).to_json, status: :ok
   end
 
   def show
-    @category = Category.find(params[:id])
+    category = Category.find(params[:id])
 
-    render json: @category, serializer: CategoryWithCardsSerializer
+    render json: CategoryWithCardsSerializer.new(category, category.flash_cards).to_json, status: :ok
   end
 end

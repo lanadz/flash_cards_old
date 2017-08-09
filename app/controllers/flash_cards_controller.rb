@@ -1,7 +1,7 @@
 class FlashCardsController < ApplicationController
   def show
-    @flash_card = FlashCard.find(params[:id])
+    flash_card = FlashCard.find(params[:id])
 
-    render json: @flash_card
+    render json: FlashCardSerializer.new(flash_card).to_json, status: :ok
   end
 end
