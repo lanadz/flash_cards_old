@@ -18,7 +18,7 @@ module Teacher
       if category.save
         render json: CategorySerializer.new(category).to_json, status: :created
       else
-        render json: @category.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.new(category.errors), status: :unprocessable_entity
       end
     end
 
