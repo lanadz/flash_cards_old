@@ -1,22 +1,22 @@
 module Teacher
   class CategoriesController < ApplicationController
     def index
-      @categories = Category.all
+      categories = Category.all
 
-      render json: @categories
+      render json: CategoriesSerializer.new(categories).to_json, status: :ok
     end
 
     def show
-      @category = Category.find(params[:id])
+      category = Category.find(params[:id])
 
-      render json: @category, serializer: CategoryWithCardsSerializer
+      render json: CategoryWithCardsSerializer.new(category, category.flash_cards).to_json, status: :ok
     end
 
     def create
-      @category = Category.new(category_params)
+      category = Category.new(category_params)
 
-      if @category.save
-        render json: @category, status: :created, location: [:teacher, @category]
+      if category.save
+        render json: CategorySerializer.new(category).to_json, status: :created
       else
         render json: @category.errors, status: :unprocessable_entity
       end

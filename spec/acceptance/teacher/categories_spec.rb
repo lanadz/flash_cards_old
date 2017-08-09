@@ -6,13 +6,15 @@ resource "Categories for Teacher" do
 
   get 'teacher/categories' do
     let(:response_json) do
-      [
-        {
-          id: category.id,
-          name: 'English',
-          is_default: false
-        }
-      ].to_json
+      {
+        data: [
+          {
+            name: 'English',
+            is_default: false,
+            id: category.id
+          }
+        ]
+      }.to_json
     end
 
     example_request "Get all categories" do
@@ -27,14 +29,19 @@ resource "Categories for Teacher" do
     let!(:flash_cards) { create :flash_card, category: category }
     let(:response_json) do
       {
-        name: 'English',
-        is_default: false,
-        flash_cards: [{
-                        face: '1+1',
-                        back: '=2'
-                      }]
+        data: {
+          name: 'English',
+          is_default: false,
+          flash_cards: [
+            {
+              face: '1+1',
+              back: '=2'
+            }
+          ]
+        }
       }.to_json
     end
+
     let(:id) { category.id }
 
     example_request "returns requested cards from selected category" do
@@ -65,7 +72,32 @@ resource "Categories for Teacher" do
     example "creates and returns category" do
       do_request(params)
       expect(status).to eq 201
-      expect(JSON.parse(response_body)).to include response_obj
+      expect(json_body).to include response_obj
+    end
+
+    context 'fail validations' do
+      let(:params) do
+        {
+          category:
+            {
+              name: ''
+            }
+        }
+      end
+
+      let(:response_json) do
+        {
+          errors: {
+            name: ["can't be blank"]
+          }
+        }.to_json
+      end
+
+      example "doesnt create category without name provided" do
+        do_request(params)
+        expect(status).to eq 422
+        expect(response_body).to include response_json
+      end
     end
   end
 end
