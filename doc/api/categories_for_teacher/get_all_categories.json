@@ -1,0 +1,42 @@
+{
+  "resource": "Categories for Teacher",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "teacher/categories",
+  "description": "Get all categories",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "teacher/categories",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1125,\n    \"name\": \"English\",\n    \"is_default\": false\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"13fb870d75daaf72864057237199e8ed\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "2bfdf96f-2e44-48da-bf06-3a0739f9d07f",
+        "X-Runtime": "0.004745",
+        "Vary": "Origin",
+        "Content-Length": "49"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

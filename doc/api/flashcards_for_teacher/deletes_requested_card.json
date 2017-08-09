@@ -1,0 +1,47 @@
+{
+  "resource": "FlashCards for Teacher",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "teacher/flash_cards/:id",
+  "description": "deletes requested card",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "id",
+      "description": "ID of flash card"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "teacher/flash_cards/983",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": " ",
+      "response_headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "5877998b-a3c9-47b9-8b72-904eb6a2cff5",
+        "X-Runtime": "0.003352",
+        "Vary": "Origin",
+        "Content-Length": "1"
+      },
+      "response_content_type": "text/plain; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

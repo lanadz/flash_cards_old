@@ -1,0 +1,111 @@
+{
+  "resources": [
+    {
+      "name": "Categories for Student",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Listing Categories",
+          "link": "categories_for_student/listing_categories.json",
+          "groups": "all",
+          "route": "/categories",
+          "method": "get"
+        },
+        {
+          "description": "Show Category and returns requested cards from that category",
+          "link": "categories_for_student/show_category_and_returns_requested_cards_from_that_category.json",
+          "groups": "all",
+          "route": "/categories/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Categories for Teacher",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Get all categories",
+          "link": "categories_for_teacher/get_all_categories.json",
+          "groups": "all",
+          "route": "teacher/categories",
+          "method": "get"
+        },
+        {
+          "description": "creates and returns category",
+          "link": "categories_for_teacher/creates_and_returns_category.json",
+          "groups": "all",
+          "route": "teacher/categories",
+          "method": "post"
+        },
+        {
+          "description": "returns requested cards from selected category",
+          "link": "categories_for_teacher/returns_requested_cards_from_selected_category.json",
+          "groups": "all",
+          "route": "teacher/categories/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "FlashCards for Student",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Show card",
+          "link": "flashcards_for_student/show_card.json",
+          "groups": "all",
+          "route": "/flash_cards/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "FlashCards for Teacher",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "creates and returns card",
+          "link": "flashcards_for_teacher/creates_and_returns_card.json",
+          "groups": "all",
+          "route": "teacher/flash_cards",
+          "method": "post"
+        },
+        {
+          "description": "deletes requested card",
+          "link": "flashcards_for_teacher/deletes_requested_card.json",
+          "groups": "all",
+          "route": "teacher/flash_cards/:id",
+          "method": "delete"
+        },
+        {
+          "description": "returns all created cards",
+          "link": "flashcards_for_teacher/returns_all_created_cards.json",
+          "groups": "all",
+          "route": "teacher/flash_cards",
+          "method": "get"
+        },
+        {
+          "description": "returns requested card",
+          "link": "flashcards_for_teacher/returns_requested_card.json",
+          "groups": "all",
+          "route": "teacher/flash_cards/:id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "LearningSessions",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "creates new learning session and returns flash_card_ids",
+          "link": "learningsessions/creates_new_learning_session_and_returns_flash_card_ids.json",
+          "groups": "all",
+          "route": "/learning_sessions",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}
