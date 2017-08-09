@@ -1,0 +1,42 @@
+{
+  "resource": "Categories for Student",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/categories",
+  "description": "Listing Categories",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/categories",
+      "request_body": null,
+      "request_headers": {
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1121,\n    \"name\": \"English\",\n    \"is_default\": false\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"d27c15118bd883a74eed2f04d7a56e09\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "7429fe25-fb46-44c9-ad1f-1992f9ccae0c",
+        "X-Runtime": "0.025611",
+        "Vary": "Origin",
+        "Content-Length": "49"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

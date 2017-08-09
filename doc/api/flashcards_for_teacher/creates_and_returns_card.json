@@ -1,0 +1,53 @@
+{
+  "resource": "FlashCards for Teacher",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "teacher/flash_cards",
+  "description": "creates and returns card",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "flash_card",
+      "name": "face",
+      "description": "Front side of card"
+    },
+    {
+      "scope": "flash_card",
+      "name": "back",
+      "description": "Back side of card"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "teacher/flash_cards",
+      "request_body": "flash_card[face]=Face&flash_card[back]=Back",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"face\": \"Face\",\n  \"back\": \"Back\"\n}",
+      "response_headers": {
+        "Location": "http://example.org/flash_cards/982",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"f7324b59f86efc74e24a03740de14e37\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "8ff54ba5-c8eb-49dc-b5d0-f2dec68ba6eb",
+        "X-Runtime": "0.008096",
+        "Vary": "Origin",
+        "Content-Length": "29"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

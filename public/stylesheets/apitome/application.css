@@ -1,0 +1,121 @@
+.aptitome-left {
+    float: left;
+    position: fixed;
+    border: 1px solid #666;
+    width: 48%;
+    overflow: scroll;
+    height: 100%;
+
+}
+
+.aptitome-left .sidebar .sidenav {
+    display: block;
+    background-color: azure;
+}
+
+.aptitome-left .sidebar .sidenav li {
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.aptitome-left .sidebar .sidenav li a {
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.aptitome-left .sidebar .sidenav li li a {
+    font-weight: normal;
+}
+
+.apitome-left .sidebar .sidenav li {
+    display: block;
+}
+
+.aptitome-right {
+    float: right;
+    width: 50%;
+}
+
+.aptitome-right .params .table {
+    width: 100%;
+}
+
+.aptitome-right .params {
+    background-color: antiquewhite;
+    padding: 20px;
+}
+
+.aptitome-right .params .table th {
+    display: none;
+}
+
+.aptitome-right .endpoint {
+    background-color: aquamarine;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.aptitome-right .endpoint h3, .aptitome-right .params h3 {
+    margin: 0;
+}
+
+.aptitome-right .endpoint pre {
+    margin-top: 0;
+}
+
+.aptitome-right .endpoint pre, .aptitome-right .params .table-responsive {
+    background-color: white;
+    border: 1px dashed #999;
+    padding: 10px;
+}
+
+.aptitome-right .response {
+    background-color: white;
+    border: 1px solid #999;
+    padding: 5px;
+}
+
+.aptitome-right .response .body {
+    background-color: antiquewhite;
+    border: 1px dashed #999;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.aptitome-right article {
+    border: 1px solid #666;
+    background-color: azure;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: small;
+    color: #999;
+}
+
+.aptitome-right .params, .aptitome-right .endpoint, .aptitome-right .response .body {
+    font-size: medium;
+    color: #666;
+}
+
+.aptitome-right .response .body h4 {
+    display: none;
+}
+
+.aptitome-right .params .name, .aptitome-right .params .description {
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.aptitome-right .params .description {
+    font-weight: normal;
+}
+
+.aptitome-right .params .name .required {
+    font-size: small;
+    font-weight: normal;
+    color: red;
+}
