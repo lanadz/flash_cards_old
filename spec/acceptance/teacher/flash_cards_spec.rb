@@ -4,7 +4,7 @@ require 'rspec_api_documentation/dsl'
 resource "FlashCards for Teacher" do
   get 'teacher/flash_cards' do
     let!(:flash_card) { create :flash_card }
-    let(:response_json) { [{face: '1+1', back: '=2'}].to_json }
+    let(:response_json) { {data: [{face: '1+1', back: '=2'}]}.to_json }
 
     example_request "returns all created cards" do
       expect(status).to eq 200
@@ -16,7 +16,7 @@ resource "FlashCards for Teacher" do
     parameter :id, 'ID of flash card', required: true
     let(:flash_card) { create :flash_card }
     let(:response_json) do
-      {face: '1+1', back: '=2'}.to_json
+      {data: {face: '1+1', back: '=2'}}.to_json
     end
     let(:id) { flash_card.id }
 
@@ -41,7 +41,7 @@ resource "FlashCards for Teacher" do
     end
 
     let(:response_json) do
-      {face: 'Face', back: 'Back'}.to_json
+      {data: {face: 'Face', back: 'Back'}}.to_json
     end
 
     before do

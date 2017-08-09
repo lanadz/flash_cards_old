@@ -4,7 +4,7 @@ require 'rspec_api_documentation/dsl'
 resource "FlashCards for Student" do
   let(:flash_card) { create :flash_card }
   let(:response_json) do
-    {face: '1+1', back: '=2'}.to_json
+    {data: {face: '1+1', back: '=2'}}.to_json
   end
   let(:id) { flash_card.id }
 
