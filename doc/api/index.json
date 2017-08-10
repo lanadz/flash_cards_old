@@ -39,6 +39,13 @@
           "method": "post"
         },
         {
+          "description": "doesnt create category without name provided",
+          "link": "categories_for_teacher/doesnt_create_category_without_name_provided.json",
+          "groups": "all",
+          "route": "teacher/categories",
+          "method": "post"
+        },
+        {
           "description": "returns requested cards from selected category",
           "link": "categories_for_teacher/returns_requested_cards_from_selected_category.json",
           "groups": "all",
