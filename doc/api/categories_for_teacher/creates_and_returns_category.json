@@ -31,16 +31,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"id\": 1128,\n  \"name\": \"Math\",\n  \"is_default\": false\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"Math\",\n    \"is_default\": false,\n    \"id\": 1918\n  }\n}",
       "response_headers": {
-        "Location": "http://example.org/teacher/categories/1128",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"65fdd500d1d97d0ea2f139817ab2f077\"",
+        "ETag": "W/\"fb744918c83657ef3c762c6f6c988d56\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d6f833f4-eca8-453b-98c6-4e0150e505cf",
-        "X-Runtime": "0.006561",
+        "X-Request-Id": "9bb68ca2-cbaa-47f4-a85a-d08f9d5ecd5b",
+        "X-Runtime": "0.008958",
         "Vary": "Origin",
-        "Content-Length": "44"
+        "Content-Length": "53"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

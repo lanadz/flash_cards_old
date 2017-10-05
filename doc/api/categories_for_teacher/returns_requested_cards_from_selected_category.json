@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "teacher/categories/1126",
+      "request_path": "teacher/categories/1916",
       "request_body": null,
       "request_headers": {
         "Host": "example.org",
@@ -29,15 +29,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"name\": \"English\",\n  \"is_default\": false,\n  \"flash_cards\": [\n    {\n      \"face\": \"1+1\",\n      \"back\": \"=2\"\n    }\n  ]\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      1574\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"1d7f1f52c4a0f6db0b9cac6d2b7c376c\"",
+        "ETag": "W/\"b7c9ad9ea004c822b8d2f219735602c5\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "e335ec45-53b0-4d52-9780-c7ca49d71d9e",
-        "X-Runtime": "0.003627",
+        "X-Request-Id": "c5e112cb-2f62-48d0-afe1-5dd97154b000",
+        "X-Runtime": "0.016743",
         "Vary": "Origin",
-        "Content-Length": "80"
+        "Content-Length": "70"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

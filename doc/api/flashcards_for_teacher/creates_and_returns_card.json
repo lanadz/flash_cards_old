@@ -35,16 +35,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"face\": \"Face\",\n  \"back\": \"Back\"\n}",
+      "response_body": "{\n  \"data\": {\n    \"face\": \"Face\",\n    \"back\": \"Back\"\n  }\n}",
       "response_headers": {
-        "Location": "http://example.org/flash_cards/982",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"f7324b59f86efc74e24a03740de14e37\"",
+        "ETag": "W/\"f822bb120c22a20bf4022d2668e2585c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "8ff54ba5-c8eb-49dc-b5d0-f2dec68ba6eb",
-        "X-Runtime": "0.008096",
+        "X-Request-Id": "50f19795-0a78-48bb-bfe6-fee930fc8bcd",
+        "X-Runtime": "0.022455",
         "Vary": "Origin",
-        "Content-Length": "29"
+        "Content-Length": "38"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

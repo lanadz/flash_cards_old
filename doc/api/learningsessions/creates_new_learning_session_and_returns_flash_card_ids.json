@@ -19,7 +19,7 @@
     {
       "request_method": "POST",
       "request_path": "/learning_sessions",
-      "request_body": "category_id=1124",
+      "request_body": "category_id=1914",
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -30,15 +30,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"flash_card_ids\": [\n    978\n  ]\n}",
+      "response_body": "{\n  \"flash_card_ids\": [\n    1573\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"3039e69f5bc87e68c44f112b3f007e97\"",
+        "ETag": "W/\"53dcf2d327b5570d706ff048cc9fc4e0\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "ecc2473c-f098-4014-8540-efe6a22b13fd",
-        "X-Runtime": "0.014789",
+        "X-Request-Id": "25c51549-1e72-4e75-8319-eddcf232e4b7",
+        "X-Runtime": "0.035237",
         "Vary": "Origin",
-        "Content-Length": "24"
+        "Content-Length": "25"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
