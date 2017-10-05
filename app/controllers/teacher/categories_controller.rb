@@ -9,7 +9,7 @@ module Teacher
     def show
       category = Category.find(params[:id])
 
-      render json: CategoryWithCardsSerializer.new(category, category.flash_cards).to_json, status: :ok
+      render json: CategoryCommonSerializer.new(category, category.flash_cards).to_json, status: :ok
     end
 
     def create

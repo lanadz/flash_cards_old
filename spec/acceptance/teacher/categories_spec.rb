@@ -26,18 +26,13 @@ resource "Categories for Teacher" do
   get 'teacher/categories/:id' do
     parameter :id, 'ID of category', required: true
 
-    let!(:flash_cards) { create :flash_card, category: category }
+    let!(:flash_card) { create :flash_card, category: category }
     let(:response_json) do
       {
         data: {
           name: 'English',
           is_default: false,
-          flash_cards: [
-            {
-              face: '1+1',
-              back: '=2'
-            }
-          ]
+          flash_card_ids: [flash_card.id]
         }
       }.to_json
     end
