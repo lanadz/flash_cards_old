@@ -8,7 +8,7 @@ resource "LearningSessions" do
     let!(:flash_cards) { create :flash_card, category: category }
     let(:category) { create :category }
     let(:response_json) do
-      {flash_card_ids: [flash_cards.id]}.to_json
+      {data: {flash_card_ids: [flash_cards.id]}}.to_json
     end
     let(:params) { {category_id: category.id} }
 

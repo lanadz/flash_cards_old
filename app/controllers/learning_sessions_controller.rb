@@ -6,6 +6,6 @@ class LearningSessionsController < ApplicationController
 
     @flash_card_ids = learning_session.current
 
-    render json: {flash_card_ids: @flash_card_ids}
+    render json: {data: {flash_card_ids: @flash_card_ids}}
   end
 end
