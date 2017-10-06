@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "teacher/categories/1916",
+      "request_path": "teacher/categories/1961",
       "request_body": null,
       "request_headers": {
         "Host": "example.org",
@@ -29,13 +29,13 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      1574\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      1608\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"b7c9ad9ea004c822b8d2f219735602c5\"",
+        "ETag": "W/\"dc3738e8deb7d01abcece46b37fa554b\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c5e112cb-2f62-48d0-afe1-5dd97154b000",
-        "X-Runtime": "0.016743",
+        "X-Request-Id": "ead81701-6a36-4a00-bb83-a8dd66bd4f2c",
+        "X-Runtime": "0.003964",
         "Vary": "Origin",
         "Content-Length": "70"
       },

@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "teacher/flash_cards/1576",
+      "request_path": "teacher/flash_cards/1610",
       "request_body": null,
       "request_headers": {
         "Host": "example.org",
@@ -34,8 +34,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"e0e3c7766850fc48b606d58bd9d60a15\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "71f2bb29-b950-4d64-b6b2-5b9812c5758b",
-        "X-Runtime": "0.003840",
+        "X-Request-Id": "c76098db-3ca7-47c2-9085-c787c1f09f48",
+        "X-Runtime": "0.004910",
         "Vary": "Origin",
         "Content-Length": "35"
       },

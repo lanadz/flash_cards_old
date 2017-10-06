@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/categories/1912",
+      "request_path": "/categories/1957",
       "request_body": null,
       "request_headers": {
         "Host": "example.org",
@@ -29,13 +29,13 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      1571\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      1605\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"21efb01d4e41077ca2ac16993ff709c7\"",
+        "ETag": "W/\"88b545fe741600e46e3c925ac4d2f955\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "53b28131-ae17-43aa-89c1-2b6a9e774a0f",
-        "X-Runtime": "0.027695",
+        "X-Request-Id": "dc32fd78-6da8-4b3b-895b-fc6f46a8905a",
+        "X-Runtime": "0.018616",
         "Vary": "Origin",
         "Content-Length": "70"
       },
