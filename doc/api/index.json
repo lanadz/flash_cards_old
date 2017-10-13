@@ -111,6 +111,13 @@
           "groups": "all",
           "route": "/learning_sessions",
           "method": "post"
+        },
+        {
+          "description": "creates new learning session and returns flash_card_ids and first flash card",
+          "link": "learningsessions/creates_new_learning_session_and_returns_flash_card_ids_and_first_flash_card.json",
+          "groups": "all",
+          "route": "/learning_sessions",
+          "method": "post"
         }
       ]
     }

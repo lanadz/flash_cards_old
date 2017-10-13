@@ -1,0 +1,47 @@
+{
+  "resource": "LearningSessions",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/learning_sessions",
+  "description": "creates new learning session and returns flash_card_ids and first flash card",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "category_id",
+      "description": "Category ID"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/learning_sessions",
+      "request_body": "category_id=2126&include[]=flash_card",
+      "request_headers": {
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      1736\n    ],\n    \"flash_card\": {\n      \"data\": {\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    }\n  }\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"c39b321560c13242d91d1055f9014583\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "9239c63a-e93c-426d-b21b-3ea68768d50e",
+        "X-Runtime": "0.005685",
+        "Vary": "Origin",
+        "Content-Length": "83"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}
