@@ -4,6 +4,7 @@ require 'rspec_api_documentation/dsl'
 resource "LearningSessions" do
   post '/learning_sessions' do
     parameter :category_id, "Category ID", required: true
+    parameter :include, "Array of resources to add, i.e. [flash_cards]"
 
     let!(:flash_cards) { create :flash_card, category: category }
     let(:category) { create :category }
