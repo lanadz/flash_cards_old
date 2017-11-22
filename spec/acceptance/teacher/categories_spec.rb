@@ -18,7 +18,7 @@ resource "Categories for Teacher" do
     end
 
     example "Get all categories" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       do_request
 
@@ -44,7 +44,7 @@ resource "Categories for Teacher" do
     let(:id) { category.id }
 
     example "returns requested cards from selected category" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       do_request
 
@@ -73,7 +73,7 @@ resource "Categories for Teacher" do
     end
 
     example "creates and returns category" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       do_request(params)
       expect(status).to eq 201
@@ -99,7 +99,7 @@ resource "Categories for Teacher" do
       end
 
       example "doesnt create category without name provided" do
-        header 'Authorization', "Bearer #{tutor.auth_token}"
+        header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
         do_request(params)
         expect(status).to eq 422

@@ -18,7 +18,7 @@ resource "Categories for Student" do
 
   get "/categories" do
     example "Listing Categories" do
-      header 'Authorization', "Bearer #{student.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
       do_request
 
       expect(status).to eq 200
@@ -43,7 +43,7 @@ resource "Categories for Student" do
     end
 
     example "Show Category and returns requested cards from that category" do
-      header 'Authorization', "Bearer #{student.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
 
       do_request
 

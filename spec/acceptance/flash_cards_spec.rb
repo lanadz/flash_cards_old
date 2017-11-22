@@ -14,7 +14,7 @@ resource "FlashCards for Student" do
     parameter :id, 'ID of flash card', required: true
 
     example 'Show card' do
-      header 'Authorization', "Bearer #{student.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
 
       do_request
       expect(status).to eq 200

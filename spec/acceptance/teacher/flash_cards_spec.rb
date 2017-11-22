@@ -9,7 +9,7 @@ resource "FlashCards for Teacher" do
     let(:response_json) { {data: [{face: '1+1', back: '=2'}]}.to_json }
 
     example "returns all created cards" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       do_request
 
@@ -27,7 +27,7 @@ resource "FlashCards for Teacher" do
     let(:id) { flash_card.id }
 
     example "returns requested card" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       do_request
 
@@ -59,7 +59,7 @@ resource "FlashCards for Teacher" do
     end
 
     example "creates and returns card" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       do_request(params)
       expect(status).to eq 201
@@ -73,7 +73,7 @@ resource "FlashCards for Teacher" do
     let!(:id) { flash_card.id }
 
     example "deletes requested card" do
-      header 'Authorization', "Bearer #{tutor.auth_token}"
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
 
       expect{do_request}.to change{FlashCard.count}.from(1).to(0)
       expect(status).to eq 200
