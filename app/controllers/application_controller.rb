@@ -13,12 +13,16 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    @_current_user ||= token
+    @_current_user ||= User.find_by(auth_token: token)
   end
 
   def token
     authenticate_or_request_with_http_token do |token, options|
-      User.find_by(auth_token: token)
+      begin
+        @token ||= JWT.decode(token, ENV.fetch('JWT_SECRET')).first['data']
+      rescue JWT::DecodeError
+        nil
+      end
     end
   end
 end

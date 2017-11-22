@@ -27,6 +27,9 @@ gem 'puma', '~> 3.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# A pure ruby implementation of the JWT standard
+gem 'jwt', '~> 2.1'
+
 gem 'bcrypt'
 
 group :development, :test do
