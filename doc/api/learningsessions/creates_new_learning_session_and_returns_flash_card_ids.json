@@ -23,9 +23,9 @@
     {
       "request_method": "POST",
       "request_path": "/learning_sessions",
-      "request_body": "category_id=126",
+      "request_body": "category_id=210",
       "request_headers": {
-        "Authorization": "Bearer token_student",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -35,15 +35,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      85\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      148\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"cdd106b3b1da0b638bfbc1efb0862901\"",
+        "ETag": "W/\"fa8cc1ab6ddd373789ec10a82a4c8254\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "ef4ac7cc-8533-4ab8-acb4-b9ef7c79658a",
-        "X-Runtime": "0.011255",
+        "X-Request-Id": "ab93dfe6-1792-4e9a-8bbc-0595ee07d1d4",
+        "X-Runtime": "0.032453",
         "Vary": "Origin",
-        "Content-Length": "32"
+        "Content-Length": "33"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

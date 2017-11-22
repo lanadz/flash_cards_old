@@ -22,7 +22,7 @@
       "request_path": "teacher/categories",
       "request_body": "category[name]=Math",
       "request_headers": {
-        "Authorization": "Bearer token_tutor",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -32,13 +32,13 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"Math\",\n    \"is_default\": false,\n    \"id\": 131\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"Math\",\n    \"is_default\": false,\n    \"id\": 215\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"28616c3c59fef6f3323969366dc7ecaf\"",
+        "ETag": "W/\"5a09a09d2f5cb64ac2e3d990aefaa8b3\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "1d20b23c-86dd-4e45-bb5e-337774676fb8",
-        "X-Runtime": "0.004559",
+        "X-Request-Id": "dc9fb430-66d2-435a-bdb4-65b892f0478d",
+        "X-Runtime": "0.008432",
         "Vary": "Origin",
         "Content-Length": "52"
       },

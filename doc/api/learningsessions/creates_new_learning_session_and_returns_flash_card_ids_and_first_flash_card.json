@@ -23,9 +23,9 @@
     {
       "request_method": "POST",
       "request_path": "/learning_sessions",
-      "request_body": "category_id=127&include[]=flash_card",
+      "request_body": "category_id=211&include[]=flash_card",
       "request_headers": {
-        "Authorization": "Bearer token_student",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -35,15 +35,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      86\n    ],\n    \"flash_card\": {\n      \"data\": {\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    }\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      149\n    ],\n    \"flash_card\": {\n      \"data\": {\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    }\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"02ab3aa24073a9c0824fc2f423637620\"",
+        "ETag": "W/\"ed3b43b775eecfbd35be2967c45607aa\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "5d508953-a834-48d6-aae6-2f0d6f659bc4",
-        "X-Runtime": "0.004614",
+        "X-Request-Id": "bbd0fa0c-97e7-4d57-a3dc-45e9161ea0c0",
+        "X-Runtime": "0.004255",
         "Vary": "Origin",
-        "Content-Length": "81"
+        "Content-Length": "82"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

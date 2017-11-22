@@ -17,7 +17,7 @@
       "request_path": "teacher/flash_cards",
       "request_body": null,
       "request_headers": {
-        "Authorization": "Bearer token_tutor",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -31,8 +31,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"6ab58186979860f524fe39e724cb009c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d3f10136-1086-47ac-bf42-408e4fdcba03",
-        "X-Runtime": "0.012560",
+        "X-Request-Id": "47577d50-3e70-47a9-bc8c-c70de25f1574",
+        "X-Runtime": "0.012788",
         "Vary": "Origin",
         "Content-Length": "37"
       },

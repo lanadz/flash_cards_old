@@ -22,7 +22,7 @@
       "request_path": "teacher/categories",
       "request_body": "category[name]=",
       "request_headers": {
-        "Authorization": "Bearer token_tutor",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -36,8 +36,8 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "026175c3-35dd-4541-874e-b658b3207497",
-        "X-Runtime": "0.013407",
+        "X-Request-Id": "2a9b785c-a3ee-407c-94a1-774f0c9dd455",
+        "X-Runtime": "0.010594",
         "Vary": "Origin",
         "Content-Length": "38"
       },
