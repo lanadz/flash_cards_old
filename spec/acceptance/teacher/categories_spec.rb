@@ -3,7 +3,7 @@ require 'rspec_api_documentation/dsl'
 
 resource "Categories for Teacher" do
   let!(:category) { create :category }
-
+  let!(:tutor) {create :tutor}
   get 'teacher/categories' do
     let(:response_json) do
       {
@@ -17,7 +17,11 @@ resource "Categories for Teacher" do
       }.to_json
     end
 
-    example_request "Get all categories" do
+    example "Get all categories" do
+      header 'Authorization', "Bearer #{tutor.auth_token}"
+
+      do_request
+
       expect(status).to eq 200
       expect(response_body).to eq response_json
     end
@@ -39,7 +43,11 @@ resource "Categories for Teacher" do
 
     let(:id) { category.id }
 
-    example_request "returns requested cards from selected category" do
+    example "returns requested cards from selected category" do
+      header 'Authorization', "Bearer #{tutor.auth_token}"
+
+      do_request
+
       expect(status).to eq 200
       expect(response_body).to eq response_json
     end
@@ -65,6 +73,8 @@ resource "Categories for Teacher" do
     end
 
     example "creates and returns category" do
+      header 'Authorization', "Bearer #{tutor.auth_token}"
+
       do_request(params)
       expect(status).to eq 201
       expect(json_body).to include response_obj
@@ -89,6 +99,8 @@ resource "Categories for Teacher" do
       end
 
       example "doesnt create category without name provided" do
+        header 'Authorization', "Bearer #{tutor.auth_token}"
+
         do_request(params)
         expect(status).to eq 422
         expect(response_body).to include response_json

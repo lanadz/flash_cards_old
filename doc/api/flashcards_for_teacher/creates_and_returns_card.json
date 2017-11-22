@@ -26,6 +26,7 @@
       "request_path": "teacher/flash_cards",
       "request_body": "flash_card[face]=Face&flash_card[back]=Back",
       "request_headers": {
+        "Authorization": "Bearer token_tutor",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -40,8 +41,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"f822bb120c22a20bf4022d2668e2585c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "dbc94e76-f60b-46c9-9546-adc5461d2eb9",
-        "X-Runtime": "0.011223",
+        "X-Request-Id": "a09d2cea-194a-48ce-abd3-3f1e1ba5131e",
+        "X-Runtime": "0.005526",
         "Vary": "Origin",
         "Content-Length": "38"
       },

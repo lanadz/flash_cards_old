@@ -18,9 +18,10 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "teacher/flash_cards/1612",
+      "request_path": "teacher/flash_cards/91",
       "request_body": null,
       "request_headers": {
+        "Authorization": "Bearer token_tutor",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -35,8 +36,8 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "f61e04cf-dfd5-4e7c-8a66-c6ae4ec28f2f",
-        "X-Runtime": "0.006072",
+        "X-Request-Id": "86e277e2-5355-4be0-9ff5-3d6a10a295df",
+        "X-Runtime": "0.004528",
         "Vary": "Origin",
         "Content-Length": "1"
       },

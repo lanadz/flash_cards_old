@@ -17,6 +17,7 @@
       "request_path": "teacher/categories",
       "request_body": null,
       "request_headers": {
+        "Authorization": "Bearer token_tutor",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -25,15 +26,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": [\n    {\n      \"name\": \"English\",\n      \"is_default\": false,\n      \"id\": 1960\n    }\n  ]\n}",
+      "response_body": "{\n  \"data\": [\n    {\n      \"name\": \"English\",\n      \"is_default\": false,\n      \"id\": 128\n    }\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"9e14e1f74a54d023eaab8b9723f93332\"",
+        "ETag": "W/\"9ae99777d4201c3a0b5a8c083ab9c03a\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "5020f942-b0d6-4ef8-ae18-8dcf5b80749e",
-        "X-Runtime": "0.003972",
+        "X-Request-Id": "8e347d10-50ae-4225-a32c-1f2e7a8c365f",
+        "X-Runtime": "0.006486",
         "Vary": "Origin",
-        "Content-Length": "58"
+        "Content-Length": "57"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
