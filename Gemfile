@@ -37,6 +37,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec_api_documentation', '~> 5.0.0'
   gem 'apitome', '~> 0.1'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
