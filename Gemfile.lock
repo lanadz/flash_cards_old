@@ -43,6 +43,7 @@ GEM
       railties
       rspec_api_documentation
     arel (8.0.0)
+    bcrypt (3.1.11)
     builder (3.2.3)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -166,6 +167,7 @@ PLATFORMS
 
 DEPENDENCIES
   apitome (~> 0.1)
+  bcrypt
   byebug
   factory_girl
   factory_girl_rails
