@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
-  include RenderConcern
 
-  prepend_before_action :require_login!
+  prepend_before_action :require_login
 
-  def require_login!
-    render_unauthorized({errors: {detail: "Access denied"}}) && return unless signed_in?
+  def require_login
+    render json: ({errors: {detail: "Access denied"}}) && return unless signed_in?
   end
 
   def signed_in?
