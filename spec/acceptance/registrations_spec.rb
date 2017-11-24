@@ -20,27 +20,30 @@ resource "Registrations" do
         }
       end
 
-      let(:response_json) do
+      let(:response_obj) do
         {
           data: {
             user: {
               name: 'Student',
               email: 'student@email.com',
-              role: 'student',
-              token: {
-                token: jwt_encode('student_token'),
-                expires_in: 3600
+              role: 'student'
+            },
+            token: {
+              token: "don't know yet",
+              expires_at: "don't know yet"
               }
             }
-          }
-        }.to_json
+        }.with_indifferent_access
       end
 
       example 'creates new user' do
         expect{do_request(params)}.to change{User.count}.from(0).to(1)
 
+        response_obj[:data][:token][:expires_at] = User.last.auth_token_expired_at.iso8601(3)
+        response_obj[:data][:token][:token] = jwt_encode(User.last.auth_token)
+
         expect(status).to eq 201
-        expect(response_body).to eq response_json
+        expect(JSON.parse(response_body)).to eq(response_obj)
       end
 
     end
