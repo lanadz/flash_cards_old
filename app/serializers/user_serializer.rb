@@ -7,14 +7,16 @@ class UserSerializer
   def to_json(options = {})
     json = {
       data: {
-        name: user.name,
-        email: user.email,
-        role: user.role
+        user: {
+          name: user.name,
+          email: user.email,
+          role: user.role
+        }
       }
     }
 
     if return_token
-      json[:token] = {
+      json[:data][:token] = {
         token: CreateToken.new(user).execute.jwt_token,
         expires_at: user.auth_token_expired_at
       }

@@ -10,9 +10,11 @@ RSpec.describe UserSerializer do
       let(:response) do
         {
           data: {
-            name: user.name,
-            email: user.email,
-            role: user.role
+            user: {
+              name: user.name,
+              email: user.email,
+              role: user.role
+            }
           }
         }
       end
@@ -28,13 +30,15 @@ RSpec.describe UserSerializer do
       let(:response) do
         {
           data: {
-            name: user.name,
-            email: user.email,
-            role: user.role
-          },
-          token: {
-            token: jwt_encode(user.auth_token),
-            expires_at: user.auth_token_expired_at
+            user: {
+              name: user.name,
+              email: user.email,
+              role: user.role
+            },
+            token: {
+              token: jwt_encode(user.auth_token),
+              expires_at: user.auth_token_expired_at
+            }
           }
         }
       end
