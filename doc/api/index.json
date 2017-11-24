@@ -120,6 +120,19 @@
           "method": "post"
         }
       ]
+    },
+    {
+      "name": "Registrations",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "creates new user",
+          "link": "registrations/creates_new_user.json",
+          "groups": "all",
+          "route": "/registrations",
+          "method": "post"
+        }
+      ]
     }
   ]
 }

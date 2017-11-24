@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "teacher/categories/213",
+      "request_path": "teacher/categories/654",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
@@ -30,13 +30,13 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      150\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      498\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"681813ac51c0f90f664a8bc26de049d4\"",
+        "ETag": "W/\"9b644b363482ae77c87edeba72675b9d\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "918245d6-4244-4e49-8616-3e12e7fc6b1d",
-        "X-Runtime": "0.003791",
+        "X-Request-Id": "d4bdab6c-f5dc-4ec4-95c5-da7b1c1a7e82",
+        "X-Runtime": "0.013567",
         "Vary": "Origin",
         "Content-Length": "69"
       },

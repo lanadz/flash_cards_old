@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/categories/208",
+      "request_path": "/categories/649",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
@@ -30,13 +30,13 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      146\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      494\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"0378d22e17728cd8e8562a794fe666c1\"",
+        "ETag": "W/\"2e29c434739cf7f17e1f56bc286fb41a\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "4ff4bac1-037d-45b8-ad23-6fdeb1439404",
-        "X-Runtime": "0.019726",
+        "X-Request-Id": "2baa6410-5da9-4bc8-a179-2e3e762d02e3",
+        "X-Runtime": "0.019294",
         "Vary": "Origin",
         "Content-Length": "69"
       },

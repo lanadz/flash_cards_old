@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "teacher/flash_cards/154",
+      "request_path": "teacher/flash_cards/502",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
@@ -36,8 +36,8 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "bb194d1e-89e8-4a50-9998-87456fbb5d1e",
-        "X-Runtime": "0.010465",
+        "X-Request-Id": "4f6bfa88-f907-4284-b9ad-b85872038376",
+        "X-Runtime": "0.016651",
         "Vary": "Origin",
         "Content-Length": "1"
       },
