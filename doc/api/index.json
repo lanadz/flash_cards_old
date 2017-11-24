@@ -131,6 +131,13 @@
           "groups": "all",
           "route": "/registrations",
           "method": "post"
+        },
+        {
+          "description": "user already registred",
+          "link": "registrations/user_already_registred.json",
+          "groups": "all",
+          "route": "/registrations",
+          "method": "post"
         }
       ]
     }
