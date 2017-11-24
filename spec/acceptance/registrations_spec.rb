@@ -13,7 +13,7 @@ resource "Registrations" do
         {
           registration: {
             name: 'Student',
-            email: 'student@email.com',
+            email: 'student@mail.com',
             role: 'student',
             password: 'password'
           }
@@ -25,7 +25,7 @@ resource "Registrations" do
           data: {
             user: {
               name: 'Student',
-              email: 'student@email.com',
+              email: 'student@mail.com',
               role: 'student'
             },
             token: {
@@ -46,6 +46,14 @@ resource "Registrations" do
         expect(JSON.parse(response_body)).to eq(response_obj)
       end
 
+
+      example 'user already registred' do
+        create(:student)
+        expect{do_request(params)}.not_to change{User.count}
+
+        expect(status).to eq 422
+        expect(JSON.parse(response_body)).to have_key("errors")
+      end
     end
   end
 end
