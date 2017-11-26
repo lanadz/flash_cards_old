@@ -36,8 +36,8 @@
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "cf4702f2-6af0-424b-b221-cdb6dccf3ae8",
-        "X-Runtime": "0.019009",
+        "X-Request-Id": "a8a2a295-58eb-4eb9-9321-2e589575170b",
+        "X-Runtime": "0.003736",
         "Vary": "Origin",
         "Content-Length": "38"
       },

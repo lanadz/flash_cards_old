@@ -38,7 +38,7 @@
     {
       "request_method": "POST",
       "request_path": "/registrations",
-      "request_body": "registration[name]=Student&registration[email]=student%40email.com&registration[role]=student&registration[password]=password",
+      "request_body": "registration[name]=Student&registration[email]=student%40mail.com&registration[role]=student&registration[password]=password",
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -49,15 +49,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"Student\",\n      \"email\": \"student@email.com\",\n      \"role\": \"student\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiSGZWSTd2UUVET2tfbkN2TnJqXzRuQncwM0FBOEUyZklBVW9LcW1zQnJwYyJ9.awLY_EE2hBohKKuKt6Up2f0jwRWXlnx1-Z6idy1mmgo\",\n      \"expires_at\": \"2017-11-24T08:30:21.081Z\"\n    }\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"Student\",\n      \"email\": \"student@mail.com\",\n      \"role\": \"student\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiSDg4MUtzNEY3eC1JYm11aER3aE45YV9BUHFLXzJnN3BKRU0tN2hPZ3RWZyJ9.wqiqh8wHbPjOMIwN5eNDy05uDEikdqM7tKI1xSsv4Ys\",\n      \"expires_at\": \"2017-11-26T09:34:36.308Z\"\n    }\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"7b8b9ad428f031e1649f620785a1afc3\"",
+        "ETag": "W/\"ebc17df1f9987b8101024973c420f947\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "b8c10526-d28a-4fee-a18e-408046be21be",
-        "X-Runtime": "0.021242",
+        "X-Request-Id": "216f6df0-0ce7-4cbe-8b59-fb6e90d783e0",
+        "X-Runtime": "0.015571",
         "Vary": "Origin",
-        "Content-Length": "279"
+        "Content-Length": "278"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

@@ -140,6 +140,26 @@
           "method": "post"
         }
       ]
+    },
+    {
+      "name": "Sign in",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "signins user",
+          "link": "sign_in/signins_user.json",
+          "groups": "all",
+          "route": "/sessions",
+          "method": "post"
+        },
+        {
+          "description": "wrong credentials",
+          "link": "sign_in/wrong_credentials.json",
+          "groups": "all",
+          "route": "/sessions",
+          "method": "post"
+        }
+      ]
     }
   ]
 }
