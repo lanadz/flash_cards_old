@@ -3,8 +3,10 @@ class ApplicationController < ActionController::API
 
   prepend_before_action :require_login
 
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
   def require_login
-    render json: ({errors: {detail: "Access denied"}}) && return unless signed_in?
+    render json: ({errors: {detail: 'Access denied'}}) && return unless signed_in?
   end
 
   def signed_in?
@@ -23,5 +25,9 @@ class ApplicationController < ActionController::API
         nil
       end
     end
+  end
+
+  def record_not_found
+    render json: {errors: {detail: 'Record not found'}}, status: :not_found
   end
 end
