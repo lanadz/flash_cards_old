@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :flash_cards, only: [:show]
   resources :categories, only: [:show, :index]
   resources :learning_sessions, only: [:create]
+  resources :registrations, only: [:create]
+  resources :sessions, only: [:create]
 
   get '/status.json', to: 'status#show'
 

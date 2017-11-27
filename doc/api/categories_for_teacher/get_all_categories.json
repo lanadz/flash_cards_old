@@ -17,6 +17,7 @@
       "request_path": "teacher/categories",
       "request_body": null,
       "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -25,13 +26,13 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": [\n    {\n      \"name\": \"English\",\n      \"is_default\": false,\n      \"id\": 1960\n    }\n  ]\n}",
+      "response_body": "{\n  \"data\": [\n    {\n      \"name\": \"English\",\n      \"is_default\": false,\n      \"id\": 1050\n    }\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"9e14e1f74a54d023eaab8b9723f93332\"",
+        "ETag": "W/\"77c1273d7c439e409cd70677ae09da80\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "5020f942-b0d6-4ef8-ae18-8dcf5b80749e",
-        "X-Runtime": "0.003972",
+        "X-Request-Id": "33db55a4-399b-49c5-a804-14c7c144c109",
+        "X-Runtime": "0.010187",
         "Vary": "Origin",
         "Content-Length": "58"
       },

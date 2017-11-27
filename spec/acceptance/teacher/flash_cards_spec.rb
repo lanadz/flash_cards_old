@@ -2,11 +2,17 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "FlashCards for Teacher" do
+  let!(:tutor) {create :tutor}
+
   get 'teacher/flash_cards' do
     let!(:flash_card) { create :flash_card }
     let(:response_json) { {data: [{face: '1+1', back: '=2'}]}.to_json }
 
-    example_request "returns all created cards" do
+    example "returns all created cards" do
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+
+      do_request
+
       expect(status).to eq 200
       expect(response_body).to eq response_json
     end
@@ -20,7 +26,11 @@ resource "FlashCards for Teacher" do
     end
     let(:id) { flash_card.id }
 
-    example_request "returns requested card" do
+    example "returns requested card" do
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+
+      do_request
+
       expect(status).to eq 200
       expect(response_body).to eq response_json
     end
@@ -49,6 +59,8 @@ resource "FlashCards for Teacher" do
     end
 
     example "creates and returns card" do
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+
       do_request(params)
       expect(status).to eq 201
       expect(response_body).to eq response_json
@@ -61,6 +73,8 @@ resource "FlashCards for Teacher" do
     let!(:id) { flash_card.id }
 
     example "deletes requested card" do
+      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+
       expect{do_request}.to change{FlashCard.count}.from(1).to(0)
       expect(status).to eq 200
     end

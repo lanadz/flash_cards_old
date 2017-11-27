@@ -120,6 +120,46 @@
           "method": "post"
         }
       ]
+    },
+    {
+      "name": "Registrations",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "creates new user",
+          "link": "registrations/creates_new_user.json",
+          "groups": "all",
+          "route": "/registrations",
+          "method": "post"
+        },
+        {
+          "description": "user already registred",
+          "link": "registrations/user_already_registred.json",
+          "groups": "all",
+          "route": "/registrations",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Sign in",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "signins user",
+          "link": "sign_in/signins_user.json",
+          "groups": "all",
+          "route": "/sessions",
+          "method": "post"
+        },
+        {
+          "description": "wrong credentials",
+          "link": "sign_in/wrong_credentials.json",
+          "groups": "all",
+          "route": "/sessions",
+          "method": "post"
+        }
+      ]
     }
   ]
 }

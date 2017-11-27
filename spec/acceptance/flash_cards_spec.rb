@@ -2,6 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "FlashCards for Student" do
+  let!(:student) { create :student }
+
   let(:flash_card) { create :flash_card }
   let(:response_json) do
     {data: {face: '1+1', back: '=2'}}.to_json
@@ -11,7 +13,10 @@ resource "FlashCards for Student" do
   get '/flash_cards/:id' do
     parameter :id, 'ID of flash card', required: true
 
-    example_request 'Show card' do
+    example 'Show card' do
+      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
+
+      do_request
       expect(status).to eq 200
       expect(response_body).to eq response_json
     end
