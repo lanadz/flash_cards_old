@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
     if user.save
       render json: UserSerializer.new(user, return_token: true).to_json, status: :created
     else
-      render json: ErrorSerializer.new(user.errors), status: :unprocessable_entity
+      render json: ErrorSerializer.new(user.errors).to_json, status: :unprocessable_entity
     end
   end
 
