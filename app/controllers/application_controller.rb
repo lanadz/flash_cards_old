@@ -1,12 +1,23 @@
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
+  class UnauthorizedException < StandardError
+  end
+
   prepend_before_action :require_login
 
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from ActiveRecord::RecordNotFound do
+    render json: {errors: {detail: 'Record not found'}}, status: :not_found
+  end
+
+  rescue_from UnauthorizedException do
+    render json: ({errors: {detail: 'Access denied'}}), status: 401
+  end
 
   def require_login
-    render json: ({errors: {detail: 'Access denied'}}) && return unless signed_in?
+    unless signed_in?
+      raise UnauthorizedException
+    end
   end
 
   def signed_in?
@@ -17,17 +28,16 @@ class ApplicationController < ActionController::API
     @_current_user ||= User.find_by(auth_token: token)
   end
 
+
+  private
+
   def token
-    authenticate_or_request_with_http_token do |token, options|
+    authenticate_with_http_token do |token, options|
       begin
-        @token ||= JWT.decode(token, ENV.fetch('JWT_SECRET')).first['data']
+        JWT.decode(token, ENV.fetch('JWT_SECRET')).first['data']
       rescue JWT::DecodeError
         nil
       end
     end
-  end
-
-  def record_not_found
-    render json: {errors: {detail: 'Record not found'}}, status: :not_found
   end
 end
