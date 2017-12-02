@@ -25,7 +25,13 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    @_current_user ||= User.find_by(auth_token: token)
+    current_token = token
+
+    if current_token.nil?
+      raise UnauthorizedException
+    end
+
+    @_current_user ||= User.find_by(auth_token: current_token)
   end
 
 
