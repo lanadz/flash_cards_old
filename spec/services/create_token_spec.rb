@@ -7,8 +7,6 @@ RSpec.describe CreateToken do
 
   it "generates token and expiry_date and updates user's fields" do
     subject.execute
-    expect(subject.jwt_token).to be_present
-    expect(subject.jwt_token_expiry_time).to be_present
     student.reload
     expect(student.auth_token).to be_present
     expect(student.auth_token_expired_at).to be_present

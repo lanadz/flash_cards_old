@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
 
     raise ActiveRecord::RecordNotFound unless user.password == user_params[:password]
 
-    render json: UserSerializer.new(user, return_token: true).to_json, status: :ok
+    CreateToken.new(user).execute
+    jwt_token = JWT.encode({ data: user.auth_token }, ENV['JWT_SECRET'])
+
+    render json: AuthorisationSerializer.new(user, jwt_token).to_json, status: :ok
   end
 
   private

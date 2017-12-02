@@ -1,5 +1,4 @@
 class CreateToken
-  attr_reader :jwt_token, :jwt_token_expiry_time
   def initialize(user)
     @user = user
   end
@@ -11,10 +10,6 @@ class CreateToken
       auth_token_expired_at: time
     )
 
-    @jwt_token = JWT.encode({ data: token }, ENV['JWT_SECRET'])
-    @jwt_token_expiry_time = time
-
-    self
   end
 
 
