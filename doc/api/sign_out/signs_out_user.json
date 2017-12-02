@@ -1,0 +1,44 @@
+{
+  "resource": "Sign out",
+  "resource_explanation": null,
+  "http_method": "DELETE",
+  "route": "/sessions/signout",
+  "description": "signs out user",
+  "explanation": null,
+  "parameters": [
+
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/sessions/signout",
+      "request_body": null,
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
+        "Host": "example.org",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"data\": {\n    \"message\": \"Bye\"\n  }\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"b4842bce9a63d29fbf07d29a97d81ccc\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "db37e803-e117-4d75-8452-9a662570ab92",
+        "X-Runtime": "0.017559",
+        "Vary": "Origin",
+        "Content-Length": "26"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

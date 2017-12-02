@@ -160,6 +160,26 @@
           "method": "post"
         }
       ]
+    },
+    {
+      "name": "Sign out",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "signs out user",
+          "link": "sign_out/signs_out_user.json",
+          "groups": "all",
+          "route": "/sessions/signout",
+          "method": "delete"
+        },
+        {
+          "description": "wrong credentials",
+          "link": "sign_out/wrong_credentials.json",
+          "groups": "all",
+          "route": "/sessions/signout",
+          "method": "delete"
+        }
+      ]
     }
   ]
 }
