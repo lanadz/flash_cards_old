@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: /@/
   validates :encrypted_password, presence: true
   validates :role, presence: true
-  validates :auth_token, uniqueness: true
 
   def password
     @password ||= Password.new(encrypted_password)
