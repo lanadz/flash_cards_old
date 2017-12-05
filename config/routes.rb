@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :flash_cards, only: [:show]
+  resources :flash_cards, only: [:show, :index, :create, :destroy]
   resources :categories, only: [:show, :index, :create]
   resources :learning_sessions, only: [:create]
   resources :registrations, only: [:create]
@@ -10,8 +10,4 @@ Rails.application.routes.draw do
   end
 
   get '/status.json', to: 'status#show'
-
-  namespace :teacher do
-    resources :flash_cards
-  end
 end

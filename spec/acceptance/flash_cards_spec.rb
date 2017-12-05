@@ -1,24 +1,79 @@
 require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
-resource "FlashCards for Student" do
-  let!(:student) { create :student }
+resource "FlashCards" do
+  let(:user) {create :user}
+  let(:category) {create :category, user: user}
+  let!(:flash_card) { create :flash_card, category: category, user: user }
 
-  let(:flash_card) { create :flash_card }
-  let(:response_json) do
-    {data: {face: '1+1', back: '=2'}}.to_json
+  get '/flash_cards' do
+    let(:response_json) { {data: [{face: '1+1', back: '=2'}]}.to_json }
+
+    example "returns all created cards" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
+      do_request
+
+      expect(status).to eq 200
+      expect(response_body).to eq response_json
+    end
   end
-  let(:id) { flash_card.id }
 
   get '/flash_cards/:id' do
     parameter :id, 'ID of flash card', required: true
+    let(:response_json) do
+      {data: {face: '1+1', back: '=2'}}.to_json
+    end
+    let(:id) { flash_card.id }
 
-    example 'Show card' do
-      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
+    example "returns requested card" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request
+
       expect(status).to eq 200
       expect(response_body).to eq response_json
+    end
+  end
+
+  post '/flash_cards' do
+    parameter :face, 'Front side of card', scope: :flash_card, required: true
+    parameter :back, 'Back side of card', scope: :flash_card, required: true
+    parameter :category_id, 'Category ID', scope: :flash_card, required: false
+
+    let(:params) do
+      {
+        flash_card:
+          {
+            face: 'Face',
+            back: 'Back',
+            category_id: category.id
+          }
+      }
+    end
+
+    let(:response_json) do
+      {data: {face: 'Face', back: 'Back'}}.to_json
+    end
+
+    example "creates and returns card" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
+      do_request(params)
+      expect(status).to eq 201
+      expect(response_body).to eq response_json
+    end
+  end
+
+  delete '/flash_cards/:id' do
+    parameter :id, 'ID of flash card', required: true
+    let!(:id) { flash_card.id }
+
+    example "deletes requested card" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
+      expect{do_request}.to change{FlashCard.count}.from(1).to(0)
+      expect(status).to eq 200
     end
   end
 end
