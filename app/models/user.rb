@@ -3,14 +3,12 @@ require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
 
-  ROLES = %w(student tutor).freeze
-
-  enum role: ROLES
-
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true, format: /@/
   validates :encrypted_password, presence: true
-  validates :role, presence: true
+
+  has_many :categories
+  has_many :flash_cards
 
   def password
     @password ||= Password.new(encrypted_password)

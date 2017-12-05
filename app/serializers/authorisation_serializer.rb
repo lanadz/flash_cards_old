@@ -10,7 +10,6 @@ class AuthorisationSerializer
         user: {
           name: user.name,
           email: user.email,
-          role: user.role
         },
         token: {
           token: jwt_token,

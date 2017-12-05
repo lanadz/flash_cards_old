@@ -1,24 +1,25 @@
 require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
-resource "Categories for Student" do
-  let!(:category) { create :category }
-  let(:response_json) do
-    {
-      data: [
-        {
-          name: 'English',
-          is_default: false,
-          id: category.id
-        }
-      ]
-    }.to_json
-  end
-  let!(:student) { create :student }
+resource "Categories" do
+  let(:user) {create :user}
+  let!(:category) { create :category, user: user }
+  get '/categories' do
+    let(:response_json) do
+      {
+        data: [
+          {
+            name: 'English',
+            is_default: false,
+            id: category.id
+          }
+        ]
+      }.to_json
+    end
 
-  get "/categories" do
-    example "Listing Categories" do
-      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
+    example "Get all categories" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
       do_request
 
       expect(status).to eq 200
@@ -26,12 +27,10 @@ resource "Categories for Student" do
     end
   end
 
-  get "/categories/:id" do
+  get '/categories/:id' do
     parameter :id, 'ID of category', required: true
 
-    let(:category) { create :category }
-    let(:id) { category.id }
-    let!(:flash_card) { create :flash_card, category: category }
+    let!(:flash_card) { create :flash_card, user: user, category: category }
     let(:response_json) do
       {
         data: {
@@ -42,13 +41,70 @@ resource "Categories for Student" do
       }.to_json
     end
 
-    example "Show Category and returns requested cards from that category" do
-      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
+    let(:id) { category.id }
+
+    example "returns requested cards from selected category" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request
 
       expect(status).to eq 200
       expect(response_body).to eq response_json
+    end
+  end
+
+  post 'categories' do
+    parameter :name, 'Name of category', scope: :category, required: true
+
+    let(:params) do
+      {
+        category:
+          {
+            name: 'Math'
+          }
+      }
+    end
+
+    let(:response_obj) do
+      {
+        'name' => 'Math',
+        'is_default' => false
+      }
+    end
+
+    example "creates and returns category" do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
+      do_request(params)
+      expect(status).to eq 201
+      expect(json_body).to include response_obj
+    end
+
+    context 'fail validations' do
+      let(:params) do
+        {
+          category:
+            {
+              name: ''
+            }
+        }
+      end
+
+      let(:response_json) do
+        {
+          errors: {
+            name: ["can't be blank"]
+          }
+        }.to_json
+      end
+
+      example "doesnt create category without name provided" do
+        header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
+        do_request(params)
+        expect(status).to eq 422
+        expect(response_body).to include response_json
+      end
     end
   end
 end
