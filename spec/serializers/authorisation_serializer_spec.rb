@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe AuthorisationSerializer do
-  let(:user) { create :student }
+  let(:user) { create :user }
 
   describe '#to_json' do
     subject { described_class.new(user, 'token') }
