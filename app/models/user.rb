@@ -12,6 +12,9 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   validates :role, presence: true
 
+  has_many :categories
+  has_many :flash_cards
+
   def password
     @password ||= Password.new(encrypted_password)
   end
