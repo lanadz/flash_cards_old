@@ -1,6 +1,6 @@
 class LearningSessionsController < ApplicationController
   def create
-    category = Category.find(params[:category_id])
+    category = current_user.categories.find(params[:category_id])
 
     learning_session = CreateLearningSession.new(category)
 
