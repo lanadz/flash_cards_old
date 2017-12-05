@@ -12,7 +12,6 @@ RSpec.describe AuthorisationSerializer do
           user: {
             name: user.name,
             email: user.email,
-            role: user.role
           },
           token: {
             token: 'token',

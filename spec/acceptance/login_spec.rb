@@ -23,7 +23,6 @@ resource "Sign in" do
           user: {
             name: 'User',
             email: 'user@mail.com',
-            role: 'student'
           },
           token: {
             token: "don't know yet",

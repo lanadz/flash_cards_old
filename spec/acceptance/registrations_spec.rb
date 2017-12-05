@@ -5,7 +5,6 @@ resource "Registrations" do
   post '/registrations' do
     parameter :name, "User's name", scope: :registration, required: true
     parameter :email, "User's email", scope: :registration, required: true
-    parameter :role, "User's role [tutor | student]", scope: :registration, required: true
     parameter :password, "User's password", scope: :registration, required: true
 
     context 'Student' do
@@ -14,7 +13,6 @@ resource "Registrations" do
           registration: {
             name: 'User',
             email: 'user@mail.com',
-            role: 'student',
             password: 'password'
           }
         }
@@ -26,7 +24,6 @@ resource "Registrations" do
             user: {
               name: 'User',
               email: 'user@mail.com',
-              role: 'student'
             },
             token: {
               token: "don't know yet",
