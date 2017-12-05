@@ -5,16 +5,14 @@ resource "Registrations" do
   post '/registrations' do
     parameter :name, "User's name", scope: :registration, required: true
     parameter :email, "User's email", scope: :registration, required: true
-    parameter :role, "User's role [tutor | student]", scope: :registration, required: true
     parameter :password, "User's password", scope: :registration, required: true
 
     context 'Student' do
       let(:params) do
         {
           registration: {
-            name: 'Student',
-            email: 'student@mail.com',
-            role: 'student',
+            name: 'User',
+            email: 'user@mail.com',
             password: 'password'
           }
         }
@@ -24,9 +22,8 @@ resource "Registrations" do
         {
           data: {
             user: {
-              name: 'Student',
-              email: 'student@mail.com',
-              role: 'student'
+              name: 'User',
+              email: 'user@mail.com',
             },
             token: {
               token: "don't know yet",
@@ -48,7 +45,7 @@ resource "Registrations" do
 
 
       example 'user already registred' do
-        create(:student)
+        create(:user)
         expect{do_request(params)}.not_to change{User.count}
 
         expect(status).to eq 422
