@@ -13,7 +13,7 @@ module Teacher
     end
 
     def create
-      category = Category.new(category_params)
+      category = Category.new(category_params).tap { |cat| cat.user_id = current_user.id }
 
       if category.save
         render json: CategorySerializer.new(category).to_json, status: :created

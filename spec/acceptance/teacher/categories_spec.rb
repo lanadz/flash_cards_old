@@ -2,8 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Categories for Teacher" do
-  let!(:category) { create :category }
-  let!(:tutor) {create :tutor}
+  let(:user) {create :user}
+  let!(:category) { create :category, user: user }
   get 'teacher/categories' do
     let(:response_json) do
       {
@@ -18,7 +18,7 @@ resource "Categories for Teacher" do
     end
 
     example "Get all categories" do
-      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request
 
@@ -30,7 +30,7 @@ resource "Categories for Teacher" do
   get 'teacher/categories/:id' do
     parameter :id, 'ID of category', required: true
 
-    let!(:flash_card) { create :flash_card, category: category }
+    let!(:flash_card) { create :flash_card, user: user, category: category }
     let(:response_json) do
       {
         data: {
@@ -44,7 +44,7 @@ resource "Categories for Teacher" do
     let(:id) { category.id }
 
     example "returns requested cards from selected category" do
-      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request
 
@@ -73,7 +73,7 @@ resource "Categories for Teacher" do
     end
 
     example "creates and returns category" do
-      header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request(params)
       expect(status).to eq 201
@@ -99,7 +99,7 @@ resource "Categories for Teacher" do
       end
 
       example "doesnt create category without name provided" do
-        header 'Authorization', "Bearer #{jwt_encode(tutor.auth_token)}"
+        header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
         do_request(params)
         expect(status).to eq 422
