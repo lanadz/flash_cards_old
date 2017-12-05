@@ -12,8 +12,8 @@ resource "Registrations" do
       let(:params) do
         {
           registration: {
-            name: 'Student',
-            email: 'student@mail.com',
+            name: 'User',
+            email: 'user@mail.com',
             role: 'student',
             password: 'password'
           }
@@ -24,8 +24,8 @@ resource "Registrations" do
         {
           data: {
             user: {
-              name: 'Student',
-              email: 'student@mail.com',
+              name: 'User',
+              email: 'user@mail.com',
               role: 'student'
             },
             token: {
@@ -48,7 +48,7 @@ resource "Registrations" do
 
 
       example 'user already registred' do
-        create(:student)
+        create(:user)
         expect{do_request(params)}.not_to change{User.count}
 
         expect(status).to eq 422

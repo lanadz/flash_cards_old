@@ -2,6 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Sign out" do
+  let(:user) { create(:user, password: 'password') }
+
   delete '/sessions/signout' do
 
     let(:response_obj) do
@@ -13,20 +15,19 @@ resource "Sign out" do
     end
 
     example 'signs out user' do
-      student = create(:student, password: 'password')
 
-      header 'Authorization', "Bearer #{jwt_encode(student.auth_token)}"
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
       do_request
-      student.reload
-      expect(student.auth_token).to be_nil
-      expect(student.auth_token_expired_at).to be_nil
+      user.reload
+      expect(user.auth_token).to be_nil
+      expect(user.auth_token_expired_at).to be_nil
       expect(status).to eq 200
       expect(JSON.parse(response_body)).to eq(response_obj)
     end
 
     context 'wrong credentials' do
       example 'wrong credentials' do
-        create(:student, password: 'password')
+        create(:user, password: 'password')
 
         do_request
 
