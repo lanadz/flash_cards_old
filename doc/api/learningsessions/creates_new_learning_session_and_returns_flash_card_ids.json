@@ -23,9 +23,9 @@
     {
       "request_method": "POST",
       "request_path": "/learning_sessions",
-      "request_body": "category_id=1048",
+      "request_body": "category_id=24",
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -35,15 +35,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      816\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      20\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"2e5c95734e291716eef9d0ff48445d58\"",
+        "ETag": "W/\"567b7aad773eb96decabb2f8df0f5b39\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "6143430f-491c-4ad3-b55e-93b54977e3ee",
-        "X-Runtime": "0.017476",
+        "X-Request-Id": "1daf097f-414b-4a19-9360-e52f5e383ebb",
+        "X-Runtime": "0.017788",
         "Vary": "Origin",
-        "Content-Length": "33"
+        "Content-Length": "32"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

@@ -1,9 +1,9 @@
 {
-  "resource": "Categories for Teacher",
+  "resource": "Categories",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "teacher/categories",
-  "description": "creates and returns category",
+  "route": "categories",
+  "description": "doesnt create category without name provided",
   "explanation": null,
   "parameters": [
     {
@@ -19,10 +19,10 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "teacher/categories",
-      "request_body": "category[name]=Math",
+      "request_path": "categories",
+      "request_body": "category[name]=",
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -30,17 +30,16 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
-      "response_status": 201,
-      "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"Math\",\n    \"is_default\": false,\n    \"id\": 1053\n  }\n}",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"errors\": {\n    \"name\": [\n      \"can't be blank\"\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"637d6f3aafaf37ac6f29ff0191535387\"",
-        "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "1feb2522-97e7-40af-be02-4f5802844117",
-        "X-Runtime": "0.018100",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "cf2ff0ef-7ae6-43b3-8fbc-b14e6ac6c6ff",
+        "X-Runtime": "0.022687",
         "Vary": "Origin",
-        "Content-Length": "53"
+        "Content-Length": "38"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

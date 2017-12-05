@@ -21,12 +21,6 @@
     {
       "scope": "registration",
       "required": true,
-      "name": "role",
-      "description": "User's role [tutor | student]"
-    },
-    {
-      "scope": "registration",
-      "required": true,
       "name": "password",
       "description": "User's password"
     }
@@ -38,7 +32,7 @@
     {
       "request_method": "POST",
       "request_path": "/registrations",
-      "request_body": "registration[name]=Student&registration[email]=student%40mail.com&registration[role]=student&registration[password]=password",
+      "request_body": "registration[name]=User&registration[email]=user%40mail.com&registration[password]=password",
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -49,15 +43,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"Student\",\n      \"email\": \"student@mail.com\",\n      \"role\": \"student\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiSDg4MUtzNEY3eC1JYm11aER3aE45YV9BUHFLXzJnN3BKRU0tN2hPZ3RWZyJ9.wqiqh8wHbPjOMIwN5eNDy05uDEikdqM7tKI1xSsv4Ys\",\n      \"expires_at\": \"2017-11-26T09:34:36.308Z\"\n    }\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"User\",\n      \"email\": \"user@mail.com\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiOHFGbVlJSzFFOTV1Mk14UUttbm1NcDlkbUZ6RlBEU3NtWG5zOTd6eURkNCJ9.Oz3wlMVGZT_q-UUDThqCH2ZxCi2uEDO-ipjSRkJwDZU\",\n      \"expires_at\": \"2017-12-05T13:34:48.016Z\"\n    }\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"ebc17df1f9987b8101024973c420f947\"",
+        "ETag": "W/\"1ff2c011508a8f49241a00743ad1c331\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "216f6df0-0ce7-4cbe-8b59-fb6e90d783e0",
-        "X-Runtime": "0.015571",
+        "X-Request-Id": "e4600d17-8d72-43ea-beb1-833f0b8544fb",
+        "X-Runtime": "0.024563",
         "Vary": "Origin",
-        "Content-Length": "278"
+        "Content-Length": "255"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

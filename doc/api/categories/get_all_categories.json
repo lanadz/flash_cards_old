@@ -1,16 +1,12 @@
 {
-  "resource": "FlashCards for Student",
+  "resource": "Categories",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/flash_cards/:id",
-  "description": "Show card",
+  "route": "/categories",
+  "description": "Get all categories",
   "explanation": null,
   "parameters": [
-    {
-      "required": true,
-      "name": "id",
-      "description": "ID of flash card"
-    }
+
   ],
   "response_fields": [
 
@@ -18,10 +14,10 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/flash_cards/815",
+      "request_path": "/categories",
       "request_body": null,
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -30,15 +26,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"face\": \"1+1\",\n    \"back\": \"=2\"\n  }\n}",
+      "response_body": "{\n  \"data\": [\n    {\n      \"name\": \"English\",\n      \"is_default\": false,\n      \"id\": 15\n    }\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"e0e3c7766850fc48b606d58bd9d60a15\"",
+        "ETag": "W/\"0dcaf27e89c550aa642de960881c0b41\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a40643d4-d77c-4bf7-a8dc-139f282bdd65",
-        "X-Runtime": "0.007537",
+        "X-Request-Id": "93345f4d-e984-4af5-9273-79824f8340b2",
+        "X-Runtime": "0.044244",
         "Vary": "Origin",
-        "Content-Length": "35"
+        "Content-Length": "56"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

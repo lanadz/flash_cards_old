@@ -1,8 +1,8 @@
 {
-  "resource": "FlashCards for Teacher",
+  "resource": "FlashCards",
   "resource_explanation": null,
   "http_method": "DELETE",
-  "route": "teacher/flash_cards/:id",
+  "route": "/flash_cards/:id",
   "description": "deletes requested card",
   "explanation": null,
   "parameters": [
@@ -18,10 +18,10 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "teacher/flash_cards/822",
+      "request_path": "/flash_cards/19",
       "request_body": null,
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -36,8 +36,8 @@
         "Content-Type": "text/plain; charset=utf-8",
         "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9391c9e9-72bb-4270-ad0d-65fe65c738be",
-        "X-Runtime": "0.005090",
+        "X-Request-Id": "6d3af859-1691-4499-9381-b37045f606e2",
+        "X-Runtime": "0.007169",
         "Vary": "Origin",
         "Content-Length": "1"
       },

@@ -23,9 +23,9 @@
     {
       "request_method": "POST",
       "request_path": "/learning_sessions",
-      "request_body": "category_id=1049&include[]=flash_card",
+      "request_body": "category_id=25&include[]=flash_card",
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fc3R1ZGVudCJ9.5y4W3mWu55bORBy_2GC8V7QTrBBH4hNsJq6OERhxnao",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -35,15 +35,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      817\n    ],\n    \"flash_card\": {\n      \"data\": {\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    }\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"flash_card_ids\": [\n      21\n    ],\n    \"flash_card\": {\n      \"data\": {\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    }\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"426f759590407c0099a161f1bd6674d4\"",
+        "ETag": "W/\"1c0b7ea3f42ec02c3c4904ec9e264955\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "150daf88-9f7b-43e5-aefc-448bbdb06821",
-        "X-Runtime": "0.013287",
+        "X-Request-Id": "899b8ce0-45fd-45be-b95b-482b8aeb773e",
+        "X-Runtime": "0.019799",
         "Vary": "Origin",
-        "Content-Length": "82"
+        "Content-Length": "81"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

@@ -1,20 +1,28 @@
 {
-  "resource": "FlashCards for Teacher",
+  "resource": "FlashCards",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "teacher/flash_cards",
+  "route": "/flash_cards",
   "description": "creates and returns card",
   "explanation": null,
   "parameters": [
     {
       "scope": "flash_card",
+      "required": true,
       "name": "face",
       "description": "Front side of card"
     },
     {
       "scope": "flash_card",
+      "required": true,
       "name": "back",
       "description": "Back side of card"
+    },
+    {
+      "scope": "flash_card",
+      "required": false,
+      "name": "category_id",
+      "description": "Category ID"
     }
   ],
   "response_fields": [
@@ -23,10 +31,10 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "teacher/flash_cards",
-      "request_body": "flash_card[face]=Face&flash_card[back]=Back",
+      "request_path": "/flash_cards",
+      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=22",
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -41,8 +49,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"f822bb120c22a20bf4022d2668e2585c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "e2202865-bd3d-4ff7-b408-95deca568454",
-        "X-Runtime": "0.016278",
+        "X-Request-Id": "19f9e170-c9ff-4253-b001-26bd2fcd7e31",
+        "X-Runtime": "0.013241",
         "Vary": "Origin",
         "Content-Length": "38"
       },

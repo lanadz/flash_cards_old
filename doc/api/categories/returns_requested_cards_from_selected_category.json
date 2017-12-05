@@ -1,8 +1,8 @@
 {
-  "resource": "Categories for Teacher",
+  "resource": "Categories",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "teacher/categories/:id",
+  "route": "/categories/:id",
   "description": "returns requested cards from selected category",
   "explanation": null,
   "parameters": [
@@ -18,10 +18,10 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "teacher/categories/1051",
+      "request_path": "/categories/16",
       "request_body": null,
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdHV0b3IifQ.Xgz4gil0AQffRo5PN4c3N8RBfW0VeNtzkmhJu73IyRM",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Cookie": ""
       },
@@ -30,15 +30,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      818\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_card_ids\": [\n      14\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"7ade5de4bca7cff6d9b7cda8bb62abc1\"",
+        "ETag": "W/\"0305915f8cc279d4c1e00cfcf892f82c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9bd4c148-d60d-464f-b086-ce71b79575a1",
-        "X-Runtime": "0.008326",
+        "X-Request-Id": "56e8d3a1-eaa1-4989-9316-1168c49706cd",
+        "X-Runtime": "0.024029",
         "Vary": "Origin",
-        "Content-Length": "69"
+        "Content-Length": "68"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
