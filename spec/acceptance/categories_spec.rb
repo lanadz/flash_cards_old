@@ -36,7 +36,7 @@ resource "Categories" do
         data: {
           name: 'English',
           is_default: false,
-          flash_card_ids: [
+          flash_cards: [
             {
               id:flash_card.id,
               face:flash_card.face,

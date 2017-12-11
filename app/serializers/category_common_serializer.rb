@@ -11,7 +11,7 @@ class CategoryCommonSerializer
       data: {
         name: name,
         is_default: is_default,
-        flash_card_ids: flash_cards.map do |record|
+        flash_cards: flash_cards.map do |record|
           {
             id: record.id,
             face: record.face,
