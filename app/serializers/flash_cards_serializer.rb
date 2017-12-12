@@ -5,7 +5,7 @@ class FlashCardsSerializer
 
   def to_json(options = {})
     {
-      data: flash_cards.map { |record| {face: record.face, back: record.back} }
+      data: flash_cards.map { |record| {id: record.id, face: record.face, back: record.back} }
     }
   end
 

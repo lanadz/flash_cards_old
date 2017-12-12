@@ -7,7 +7,7 @@ resource "FlashCards" do
   let!(:flash_card) { create :flash_card, category: category, user: user }
 
   get '/flash_cards' do
-    let(:response_json) { {data: [{face: '1+1', back: '=2'}]}.to_json }
+    let(:response_json) { {data: [{id: flash_card.id, face: '1+1', back: '=2'}]}.to_json }
 
     example "returns all created cards" do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"

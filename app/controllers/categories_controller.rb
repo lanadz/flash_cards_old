@@ -5,6 +5,13 @@ class CategoriesController < ApplicationController
     render json: CategoriesSerializer.new(categories).to_json, status: :ok
   end
 
+  def cards
+    category = current_user.categories.find(params[:id])
+    flash_cards = category.flash_cards
+
+    render json: FlashCardsSerializer.new(flash_cards).to_json
+  end
+
   def show
     category = current_user.categories.find(params[:id])
 
