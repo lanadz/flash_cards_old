@@ -32,8 +32,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"b4842bce9a63d29fbf07d29a97d81ccc\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a6041030-ec95-47cd-bd93-97bf099ed910",
-        "X-Runtime": "0.005475",
+        "X-Request-Id": "001c47f0-2346-4d28-8621-f6e00cf7a666",
+        "X-Runtime": "0.006155",
         "Vary": "Origin",
         "Content-Length": "26"
       },

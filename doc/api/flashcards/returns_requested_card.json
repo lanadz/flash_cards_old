@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/flash_cards/16",
+      "request_path": "/flash_cards/170",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -35,8 +35,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"e0e3c7766850fc48b606d58bd9d60a15\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "8d87d143-8aa9-419d-815f-b375e9d1d628",
-        "X-Runtime": "0.006362",
+        "X-Request-Id": "f1a7c059-1ee3-4d62-986c-65de37632100",
+        "X-Runtime": "0.007194",
         "Vary": "Origin",
         "Content-Length": "35"
       },

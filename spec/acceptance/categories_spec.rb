@@ -59,34 +59,6 @@ resource "Categories" do
     end
   end
 
-  get '/categories/:id/cards' do
-    parameter :id, 'ID of category', required: true
-
-    let!(:flash_card) { create :flash_card, user: user, category: category }
-    let(:response_json) do
-      {
-        data: [
-          {
-            id: flash_card.id,
-            face: flash_card.face,
-            back: flash_card.back,
-          }
-        ]
-      }.to_json
-    end
-
-    let(:id) { category.id }
-
-    example "returns requested cards from selected category" do
-      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
-
-      do_request
-
-      expect(status).to eq 200
-      expect(response_body).to eq response_json
-    end
-  end
-
   post 'categories' do
     parameter :name, 'Name of category', scope: :category, required: true
 

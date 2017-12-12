@@ -2,7 +2,7 @@
   "resource": "Categories",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/categories/:id/cards",
+  "route": "/categories/:id",
   "description": "returns requested cards from selected category",
   "explanation": null,
   "parameters": [
@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/categories/166/cards",
+      "request_path": "/categories/191",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -30,15 +30,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": [\n    {\n      \"id\": 147,\n      \"face\": \"1+1\",\n      \"back\": \"=2\"\n    }\n  ]\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_cards\": [\n      {\n        \"id\": 168,\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"0328c0ba61c9d577644ead0a1fd951ae\"",
+        "ETag": "W/\"300d4560b152350943737ac5e1308a7a\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "e50343d2-1764-4b72-ad99-333189dc2703",
-        "X-Runtime": "0.018404",
+        "X-Request-Id": "58d14d29-c204-4a87-be1a-c5c544dfc415",
+        "X-Runtime": "0.011808",
         "Vary": "Origin",
-        "Content-Length": "46"
+        "Content-Length": "98"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

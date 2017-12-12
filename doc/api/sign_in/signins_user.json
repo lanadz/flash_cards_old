@@ -37,13 +37,13 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"User\",\n      \"email\": \"user@mail.com\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoieHFZZUZtWVVIR05DN18zMUp6Vzl6bE5ac1paYWJHQkY2UXJrX2lYNExncyJ9.k7tl1x-xlp7brvpPNb7oGRsjkl_3U3m3GBrHIAj3T0w\",\n      \"expires_at\": \"2017-12-05T13:34:47.903Z\"\n    }\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"User\",\n      \"email\": \"user@mail.com\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoicng4cUdJVzhiY3pKWTZ3T2d6aXM3cEFfdVoyOURmT2dKWFI4TXA5OUw0QSJ9.xbKr7lI9gm6q-dqgKFxN5myjkFu7ouPJdIC_RrZcgiE\",\n      \"expires_at\": \"2017-12-12T04:25:28.212Z\"\n    }\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"5ef2a7bdc14d8d091d589c95ccdfd69a\"",
+        "ETag": "W/\"2f78f17c1f969094b76ba195b7d6eaa8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "d24201b8-78cf-4bfc-a2a0-a5c00720abd0",
-        "X-Runtime": "0.025490",
+        "X-Request-Id": "5824a56b-6cdc-4925-9ec3-b6f7864feb50",
+        "X-Runtime": "0.027176",
         "Vary": "Origin",
         "Content-Length": "255"
       },
