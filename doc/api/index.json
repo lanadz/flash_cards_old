@@ -31,6 +31,13 @@
           "groups": "all",
           "route": "/categories/:id",
           "method": "get"
+        },
+        {
+          "description": "returns requested cards from selected category",
+          "link": "categories/returns_requested_cards_from_selected_category.json",
+          "groups": "all",
+          "route": "/categories/:id/cards",
+          "method": "get"
         }
       ]
     },
