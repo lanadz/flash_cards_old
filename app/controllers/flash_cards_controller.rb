@@ -29,7 +29,7 @@ class FlashCardsController < ApplicationController
     flash_card = current_user.flash_cards.find(params[:id])
     flash_card.destroy
 
-    render :ok
+    render json: {data: {message: 'Deleted'}}, status: :ok
   end
 
   private
