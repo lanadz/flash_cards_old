@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "/flash_cards/272",
+      "request_path": "/flash_cards/279",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -31,17 +31,17 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": " ",
+      "response_body": "{\n  \"data\": {\n    \"message\": \"Deleted\"\n  }\n}",
       "response_headers": {
-        "Content-Type": "text/plain; charset=utf-8",
-        "ETag": "W/\"36a9e7f1c95b82ffb99743e0c5c4ce95\"",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"0697849b9093f0dca30514289baa16e8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c783f533-476b-45c8-a2ea-119f60bf8b2c",
-        "X-Runtime": "0.007806",
+        "X-Request-Id": "ecfa79b5-f4fd-4770-869e-5fc6bbb65e4a",
+        "X-Runtime": "0.014580",
         "Vary": "Origin",
-        "Content-Length": "1"
+        "Content-Length": "30"
       },
-      "response_content_type": "text/plain; charset=utf-8",
+      "response_content_type": "application/json; charset=utf-8",
       "curl": null
     }
   ]
