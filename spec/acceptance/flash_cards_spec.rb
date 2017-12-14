@@ -22,7 +22,13 @@ resource "FlashCards" do
   get '/flash_cards/:id' do
     parameter :id, 'ID of flash card', required: true
     let(:response_json) do
-      {data: {face: '1+1', back: '=2'}}.to_json
+      {
+        data: {
+          id: flash_card.id,
+          face: flash_card.face,
+          back: flash_card.back
+        }
+      }.to_json
     end
     let(:id) { flash_card.id }
 
@@ -52,16 +58,23 @@ resource "FlashCards" do
       }
     end
 
-    let(:response_json) do
-      {data: {face: 'Face', back: 'Back'}}.to_json
+    let(:response_obj) do
+      {
+        data:
+          {
+            face: 'Face',
+            back: 'Back'
+          }
+      }.with_indifferent_access
     end
 
     example "creates and returns card" do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request(params)
+      response_obj[:data][:id] = FlashCard.last.id
       expect(status).to eq 201
-      expect(response_body).to eq response_json
+      expect(JSON.parse(response_body)).to eq response_obj
     end
   end
 
