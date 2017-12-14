@@ -32,7 +32,7 @@
     {
       "request_method": "POST",
       "request_path": "/flash_cards",
-      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=197",
+      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=309",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -49,8 +49,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"f822bb120c22a20bf4022d2668e2585c\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "c30d0bd3-4a4e-4cac-b6b4-60c3e25c1694",
-        "X-Runtime": "0.019071",
+        "X-Request-Id": "7cd50d7b-658d-4a97-b575-a92df4efe57f",
+        "X-Runtime": "0.023573",
         "Vary": "Origin",
         "Content-Length": "38"
       },

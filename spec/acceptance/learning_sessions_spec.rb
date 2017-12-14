@@ -24,7 +24,7 @@ resource "LearningSessions" do
     end
     let(:params) { {category_id: category.id} }
 
-    example 'creates new learning session and returns flash_card_ids' do
+    example 'creates new learning session and returns flash cards' do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request(params)

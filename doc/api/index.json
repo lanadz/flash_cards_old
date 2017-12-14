@@ -73,37 +73,10 @@
       "explanation": null,
       "examples": [
         {
-          "description": "creates new learning session and returns flash_card_ids",
-          "link": "learningsessions/creates_new_learning_session_and_returns_flash_card_ids.json",
+          "description": "creates new learning session and returns flash cards",
+          "link": "learningsessions/creates_new_learning_session_and_returns_flash_cards.json",
           "groups": "all",
           "route": "/learning_sessions",
-          "method": "post"
-        },
-        {
-          "description": "creates new learning session and returns flash_card_ids and first flash card",
-          "link": "learningsessions/creates_new_learning_session_and_returns_flash_card_ids_and_first_flash_card.json",
-          "groups": "all",
-          "route": "/learning_sessions",
-          "method": "post"
-        }
-      ]
-    },
-    {
-      "name": "Registrations",
-      "explanation": null,
-      "examples": [
-        {
-          "description": "creates new user",
-          "link": "registrations/creates_new_user.json",
-          "groups": "all",
-          "route": "/registrations",
-          "method": "post"
-        },
-        {
-          "description": "user already registred",
-          "link": "registrations/user_already_registred.json",
-          "groups": "all",
-          "route": "/registrations",
           "method": "post"
         }
       ]
