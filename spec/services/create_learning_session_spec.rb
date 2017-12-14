@@ -6,6 +6,6 @@ RSpec.describe CreateLearningSession do
   let!(:flash_card) { create :flash_card, user: user, category: category }
   subject { described_class.new(category) }
   it 'fetches flash cards' do
-    expect(subject.flash_card_ids).to eq [flash_card.id]
+    expect(subject.flash_cards).to eq [flash_card]
   end
 end

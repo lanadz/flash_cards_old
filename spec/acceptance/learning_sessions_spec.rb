@@ -12,7 +12,15 @@ resource "LearningSessions" do
     let(:category) { create :category, user: user }
     let!(:flash_cards) { create :flash_card, category: category, user: user }
     let(:response_json) do
-      {data: {flash_card_ids: [flash_cards.id]}}.to_json
+      {
+        data: [
+            {id: flash_cards.id,
+             face: flash_cards.face,
+             back: flash_cards.back,
+            }
+          ]
+
+      }.to_json
     end
     let(:params) { {category_id: category.id} }
 
@@ -23,30 +31,5 @@ resource "LearningSessions" do
       expect(status).to eq 200
       expect(response_body).to eq response_json
     end
-
-    context 'Pass include param' do
-      let(:params) { {category_id: category.id, include: ['flash_card']} }
-      let(:response_json) do
-        {
-          data: {
-            flash_card_ids: [flash_cards.id],
-            flash_card: {
-              data: {
-                face: '1+1',
-                back: '=2'
-              }
-            }
-          }
-        }.to_json
-      end
-
-      example 'creates new learning session and returns flash_card_ids and first flash card' do
-        header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
-
-        do_request(params)
-        expect(status).to eq 200
-        expect(response_body).to eq response_json
-      end
-  end
   end
 end

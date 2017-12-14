@@ -1,11 +1,11 @@
 class CreateLearningSession
-  attr_reader :category, :flash_card_ids
+  attr_reader :category, :flash_cards
 
   def initialize(category)
-    @flash_card_ids = category.flash_cards.pluck(:id)
+    @flash_cards = category.flash_cards
   end
 
   def current
-    DefaultStrategy.new(flash_card_ids).cards
+    DefaultStrategy.new(flash_cards).cards
   end
 end

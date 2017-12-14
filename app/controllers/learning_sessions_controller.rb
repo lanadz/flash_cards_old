@@ -4,16 +4,8 @@ class LearningSessionsController < ApplicationController
 
     learning_session = CreateLearningSession.new(category)
 
-    flash_card_ids = learning_session.current
+    flash_cards = learning_session.current
 
-    json =
-      if params[:include].present? && params[:include].include?('flash_card')
-        flash_card = FlashCard.find(flash_card_ids.first)
-        {data: {flash_card_ids: flash_card_ids, flash_card: FlashCardSerializer.new(flash_card)}}
-      else
-        {data: {flash_card_ids: flash_card_ids}}
-      end
-
-    render json: json
+    render json: FlashCardsSerializer.new(flash_cards).to_json
   end
 end
