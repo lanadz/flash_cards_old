@@ -2,10 +2,8 @@ class LearningSessionsController < ApplicationController
   def create
     category = current_user.categories.find(params[:category_id])
 
-    learning_session = CreateLearningSession.new(category)
+    learning_session = CreateLearningSession.new(category, current_user).execute
 
-    flash_cards = learning_session.current
-
-    render json: FlashCardsSerializer.new(flash_cards).to_json
+    render json: LearningSessionSerializer.new(learning_session).to_json
   end
 end

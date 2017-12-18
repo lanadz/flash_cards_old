@@ -1,11 +1,21 @@
 class CreateLearningSession
-  attr_reader :category, :flash_cards
-
-  def initialize(category)
-    @flash_cards = category.flash_cards
+  def initialize(category, user)
+    @category = category
+    @user = user
   end
 
-  def current
-    DefaultStrategy.new(flash_cards).cards
+  def execute
+    {
+      learning_session_details: LearningSessionDetail.create!(user: user, category: category, started_at: Time.current),
+      cards: DefaultStrategy.new(flash_cards).cards
+    }
+  end
+
+  private
+
+  attr_reader :category, :user
+
+  def flash_cards
+    @flash_cards ||= category.flash_cards
   end
 end

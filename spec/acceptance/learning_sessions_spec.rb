@@ -13,23 +13,33 @@ resource "LearningSessions" do
     let!(:flash_cards) { create :flash_card, category: category, user: user }
     let(:response_json) do
       {
-        data: [
-            {id: flash_cards.id,
-             face: flash_cards.face,
-             back: flash_cards.back,
+        data: {
+          learning_session_details: {
+            id: nil,
+            started_at: nil
+          },
+          cards: [
+            {
+              id: flash_cards.id,
+              face: flash_cards.face,
+              back: flash_cards.back,
             }
           ]
+        }
+      }.with_indifferent_access
 
-      }.to_json
     end
     let(:params) { {category_id: category.id} }
 
     example 'creates new learning session and returns flash cards' do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
-      do_request(params)
+      expect { do_request(params) }.to change { LearningSessionDetail.count }.by(1)
+      learning_session_detail = LearningSessionDetail.last
+      response_json[:data][:learning_session_details][:id] = learning_session_detail.id
+      response_json[:data][:learning_session_details][:started_at] = learning_session_detail.started_at.iso8601
       expect(status).to eq 200
-      expect(response_body).to eq response_json
+      expect(JSON.parse(response_body)).to eq response_json
     end
   end
 end
