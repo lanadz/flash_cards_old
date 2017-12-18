@@ -32,15 +32,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"Math\",\n    \"is_default\": false,\n    \"id\": 450\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"Math\",\n    \"is_default\": false,\n    \"id\": 22\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"5d5faac424e0ffd1d22f56ba5e96a507\"",
+        "ETag": "W/\"48359c3eec6233eaca8ef7d8bdac7155\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "61fc1d7f-1570-41bb-879e-3a0481f37fb3",
-        "X-Runtime": "0.011199",
+        "X-Request-Id": "7ef9a4f9-cc44-4dcb-8049-1ea1b2ee1379",
+        "X-Runtime": "0.014478",
         "Vary": "Origin",
-        "Content-Length": "52"
+        "Content-Length": "51"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

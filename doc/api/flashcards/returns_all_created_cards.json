@@ -26,15 +26,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": [\n    {\n      \"id\": 395,\n      \"face\": \"1+1\",\n      \"back\": \"=2\"\n    }\n  ]\n}",
+      "response_body": "{\n  \"data\": [\n    {\n      \"id\": 19,\n      \"face\": \"1+1\",\n      \"back\": \"=2\"\n    }\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"5ba042ac4eef9abbb2cba87df5a4b1c2\"",
+        "ETag": "W/\"856e11d745dd1643e0b34aca6618d1e2\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "b69683eb-35e3-4ca4-b854-948f9ae340f3",
-        "X-Runtime": "0.009372",
+        "X-Request-Id": "05da4d43-237e-4fc6-aa36-591de309511e",
+        "X-Runtime": "0.006953",
         "Vary": "Origin",
-        "Content-Length": "46"
+        "Content-Length": "45"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
