@@ -59,7 +59,7 @@ resource "LearningSessions" do
     end
     let(:response_json) { {data: {message: 'Updated'}}.to_json }
 
-    example 'creates new learning session and returns flash cards' do
+    example 'updates learning session detail' do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       expect { do_request(params) }.to change { LearningSessionDetail.count }.by(0)

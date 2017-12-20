@@ -1,15 +1,22 @@
 {
-  "resource": "FlashCards",
+  "resource": "LearningSessions",
   "resource_explanation": null,
-  "http_method": "DELETE",
-  "route": "/flash_cards/:id",
-  "description": "deletes requested card",
+  "http_method": "PUT",
+  "route": "learning_sessions/:id",
+  "description": "updates learning session detail",
   "explanation": null,
   "parameters": [
     {
+      "scope": "learning_session_detail",
       "required": true,
-      "name": "id",
-      "description": "ID of flash card"
+      "name": "correct_answers",
+      "description": "Number of correct answers"
+    },
+    {
+      "scope": "learning_session_detail",
+      "required": true,
+      "name": "wrong_answers",
+      "description": "Number of wrong answers"
     }
   ],
   "response_fields": [
@@ -17,9 +24,9 @@
   ],
   "requests": [
     {
-      "request_method": "DELETE",
-      "request_path": "/flash_cards/349",
-      "request_body": null,
+      "request_method": "PUT",
+      "request_path": "learning_sessions/50",
+      "request_body": "learning_session_detail[correct_answers]=4&learning_session_detail[wrong_answers]=2",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -31,13 +38,13 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"message\": \"Deleted\"\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"message\": \"Updated\"\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"0697849b9093f0dca30514289baa16e8\"",
+        "ETag": "W/\"8bb1d80130a3437892f3b70ed3b0317e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "bac1f8c1-e5c4-4aa3-9609-0f439a4e80ec",
-        "X-Runtime": "0.006166",
+        "X-Request-Id": "35c19fc2-db74-437e-ad2d-7402d4d3da3b",
+        "X-Runtime": "0.013481",
         "Vary": "Origin",
         "Content-Length": "30"
       },

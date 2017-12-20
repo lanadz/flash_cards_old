@@ -78,6 +78,13 @@
           "groups": "all",
           "route": "/learning_sessions",
           "method": "post"
+        },
+        {
+          "description": "updates learning session detail",
+          "link": "learningsessions/updates_learning_session_detail.json",
+          "groups": "all",
+          "route": "learning_sessions/:id",
+          "method": "put"
         }
       ]
     },

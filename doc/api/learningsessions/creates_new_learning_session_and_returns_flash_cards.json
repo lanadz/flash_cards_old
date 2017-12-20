@@ -23,7 +23,7 @@
     {
       "request_method": "POST",
       "request_path": "/learning_sessions",
-      "request_body": "category_id=28",
+      "request_body": "category_id=384",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -35,15 +35,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"learning_session_details\": {\n      \"id\": 7,\n      \"started_at\": \"2017-12-18T07:52:31Z\"\n    },\n    \"cards\": [\n      {\n        \"id\": 24,\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"learning_session_details\": {\n      \"id\": 49,\n      \"started_at\": \"2017-12-20T04:20:14Z\"\n    },\n    \"cards\": [\n      {\n        \"id\": 350,\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"e6f9bede43c8aebd64b6480cb74dfb51\"",
+        "ETag": "W/\"24ca52f5ce3b8ac028f8a49e83595aad\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "de9f337f-40f6-4c91-8fe7-e773f940edcc",
-        "X-Runtime": "0.030584",
+        "X-Request-Id": "23513a31-aa27-4576-bae6-4060f55a70a6",
+        "X-Runtime": "0.022770",
         "Vary": "Origin",
-        "Content-Length": "127"
+        "Content-Length": "129"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
