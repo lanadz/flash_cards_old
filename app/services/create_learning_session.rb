@@ -5,9 +5,10 @@ class CreateLearningSession
   end
 
   def execute
+    cards = DefaultStrategy.new(flash_cards).cards
     {
-      learning_session_details: LearningSessionDetail.create!(user: user, category: category, started_at: Time.current),
-      cards: DefaultStrategy.new(flash_cards).cards
+      learning_session_details: LearningSessionDetail.create!(user: user, category: category, started_at: Time.current, cards_amount: cards.length),
+      cards: cards
     }
   end
 
