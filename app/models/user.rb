@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :categories
   has_many :flash_cards
+  has_many :learning_session_details
 
   def password
     @password ||= Password.new(encrypted_password)

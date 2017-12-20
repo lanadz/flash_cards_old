@@ -32,7 +32,7 @@
     {
       "request_method": "POST",
       "request_path": "/flash_cards",
-      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=454",
+      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=382",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -44,13 +44,13 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"id\": 398,\n    \"face\": \"Face\",\n    \"back\": \"Back\"\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"id\": 348,\n    \"face\": \"Face\",\n    \"back\": \"Back\"\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"fded221a7fcbddfcc83b03c49d6a95ff\"",
+        "ETag": "W/\"af71045be1f2aef38e1811305ad32832\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9368f1c5-a828-48a5-849b-52f0ed770abe",
-        "X-Runtime": "0.011801",
+        "X-Request-Id": "b7029941-0748-49fa-8028-2479eee8e338",
+        "X-Runtime": "0.010954",
         "Vary": "Origin",
         "Content-Length": "47"
       },

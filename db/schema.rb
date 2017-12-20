@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205081339) do
+ActiveRecord::Schema.define(version: 20171218073548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 20171205081339) do
     t.bigint "user_id"
     t.index ["category_id"], name: "index_flash_cards_on_category_id"
     t.index ["user_id"], name: "index_flash_cards_on_user_id"
+  end
+
+  create_table "learning_session_details", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "category_id"
+    t.integer "correct_answers"
+    t.integer "wrong_answers"
+    t.integer "cards_amount"
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.index ["category_id"], name: "index_learning_session_details_on_category_id"
+    t.index ["started_at"], name: "index_learning_session_details_on_started_at"
+    t.index ["user_id"], name: "index_learning_session_details_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
