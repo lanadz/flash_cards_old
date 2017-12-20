@@ -2,15 +2,16 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "LearningSessions" do
+  let!(:user) { create :user }
+
+  let(:user) { create :user }
+  let(:category) { create :category, user: user }
+  let!(:flash_cards) { create :flash_card, category: category, user: user }
+
   post '/learning_sessions' do
     parameter :category_id, "Category ID", required: true
     parameter :include, "Array of resources to add, i.e. [flash_cards]"
 
-    let!(:user) { create :user }
-
-    let(:user) { create :user }
-    let(:category) { create :category, user: user }
-    let!(:flash_cards) { create :flash_card, category: category, user: user }
     let(:response_json) do
       {
         data: {
@@ -40,6 +41,34 @@ resource "LearningSessions" do
       response_json[:data][:learning_session_details][:started_at] = learning_session_detail.started_at.iso8601
       expect(status).to eq 200
       expect(JSON.parse(response_body)).to eq response_json
+    end
+  end
+
+  put 'learning_sessions/:id' do
+    parameter :correct_answers, "Number of correct answers", scope: :learning_session_detail, required: true
+    parameter :wrong_answers, "Number of wrong answers", scope: :learning_session_detail, required: true
+
+    let!(:learning_session_detail) { create :learning_session_detail, user: user, category: category }
+    let(:id) { learning_session_detail.id }
+    let(:params) do
+      {
+        learning_session_detail: {
+          correct_answers: 4,
+          wrong_answers: 2}
+      }
+    end
+    let(:response_json) { {data: {message: 'Updated'}}.to_json }
+
+    example 'creates new learning session and returns flash cards' do
+      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+
+      expect { do_request(params) }.to change { LearningSessionDetail.count }.by(0)
+      learning_session_detail.reload
+      expect(learning_session_detail.correct_answers).to eq 4
+      expect(learning_session_detail.wrong_answers).to eq 2
+      expect(learning_session_detail.finished_at).not_to be nil
+      expect(status).to eq 200
+      expect(response_body).to eq response_json
     end
   end
 end
