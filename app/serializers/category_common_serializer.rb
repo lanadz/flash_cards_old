@@ -1,9 +1,11 @@
 class CategoryCommonSerializer
 
-  def initialize(category, flash_cards)
+  def initialize(category:, flash_cards:, total_points: 0, last_session_points: 0)
     @name = category.name
     @is_default = category.is_default
     @flash_cards = flash_cards
+    @last_session_points = last_session_points
+    @total_points = total_points
   end
 
   def to_json(options = {})
@@ -11,6 +13,8 @@ class CategoryCommonSerializer
       data: {
         name: name,
         is_default: is_default,
+        total_points: total_points,
+        last_session_points: last_session_points,
         flash_cards: flash_cards.map do |record|
           {
             id: record.id,
@@ -26,5 +30,5 @@ class CategoryCommonSerializer
 
   private
 
-  attr_reader :name, :is_default, :flash_cards
+  attr_reader :name, :is_default, :flash_cards, :total_points, :last_session_points
 end

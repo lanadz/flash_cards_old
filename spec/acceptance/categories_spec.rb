@@ -36,6 +36,8 @@ resource "Categories" do
         data: {
           name: 'English',
           is_default: false,
+          total_points: 0,
+          last_session_points: 0,
           flash_cards: [
             {
               id:flash_card.id,
