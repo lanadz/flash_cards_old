@@ -12,6 +12,9 @@ class LearningSessionDetailsForCategory
       total_points += learning_session.correct_answers
       total_points
     end
+
+    @last_session_points = learning_sessions.last&.correct_answers || 0
+    self
   end
 
   private

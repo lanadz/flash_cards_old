@@ -12,5 +12,14 @@ RSpec.describe LearningSessionDetailsForCategory do
       expect(subject.total_points).to eq 10
     end
   end
+
+  describe '#last_points' do
+    it 'returns total points' do
+      last_session = create(:learning_session_detail, user: user, category: category, wrong_answers: 0, correct_answers: 3, cards_amount: 3)
+      learning_session_details.push(last_session)
+      subject.execute
+      expect(subject.last_session_points).to eq last_session.correct_answers
+    end
+  end
 end
 
