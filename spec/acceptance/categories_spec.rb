@@ -53,7 +53,7 @@ resource "Categories" do
 
     let(:id) { category.id }
 
-    example "returns requested cards from selected category" do
+    example "returns category info and requested cards from selected category" do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request

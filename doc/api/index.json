@@ -26,8 +26,8 @@
           "method": "post"
         },
         {
-          "description": "returns requested cards from selected category",
-          "link": "categories/returns_requested_cards_from_selected_category.json",
+          "description": "returns category info and requested cards from selected category",
+          "link": "categories/returns_category_info_and_requested_cards_from_selected_category.json",
           "groups": "all",
           "route": "/categories/:id",
           "method": "get"
