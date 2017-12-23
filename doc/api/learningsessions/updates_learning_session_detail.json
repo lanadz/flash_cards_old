@@ -25,7 +25,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "learning_sessions/50",
+      "request_path": "learning_sessions/247",
       "request_body": "learning_session_detail[correct_answers]=4&learning_session_detail[wrong_answers]=2",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -43,8 +43,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"8bb1d80130a3437892f3b70ed3b0317e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "35c19fc2-db74-437e-ad2d-7402d4d3da3b",
-        "X-Runtime": "0.013481",
+        "X-Request-Id": "0da0d261-07f8-4947-b986-b83389ab82ab",
+        "X-Runtime": "0.024204",
         "Vary": "Origin",
         "Content-Length": "30"
       },

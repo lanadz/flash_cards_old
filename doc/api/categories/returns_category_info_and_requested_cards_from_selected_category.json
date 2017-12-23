@@ -3,7 +3,7 @@
   "resource_explanation": null,
   "http_method": "GET",
   "route": "/categories/:id",
-  "description": "returns requested cards from selected category",
+  "description": "returns category info and requested cards from selected category",
   "explanation": null,
   "parameters": [
     {
@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/categories/376",
+      "request_path": "/categories/640",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -30,15 +30,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"flash_cards\": [\n      {\n        \"id\": 344,\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    ]\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"name\": \"English\",\n    \"is_default\": false,\n    \"total_points\": 15,\n    \"last_session_points\": 10,\n    \"flash_cards\": [\n      {\n        \"id\": 522,\n        \"face\": \"1+1\",\n        \"back\": \"=2\"\n      }\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"b92e330e46800a0443b46797f962c82f\"",
+        "ETag": "W/\"0b47633219c82e06ecdc041d9c9fd173\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "60fed018-904d-47b2-90cb-9ab37c9968b2",
-        "X-Runtime": "0.010478",
+        "X-Request-Id": "8e062dd7-1f08-45ff-97e6-9ad7faef6332",
+        "X-Runtime": "0.013321",
         "Vary": "Origin",
-        "Content-Length": "98"
+        "Content-Length": "141"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

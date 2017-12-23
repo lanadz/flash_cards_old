@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Categories" do
-  let(:user) {create :user}
+  let(:user) { create :user }
   let!(:category) { create :category, user: user }
   get '/categories' do
     let(:response_json) do
@@ -31,16 +31,20 @@ resource "Categories" do
     parameter :id, 'ID of category', required: true
 
     let!(:flash_card) { create :flash_card, user: user, category: category }
+    let!(:learning_sessions) { create :learning_session_detail, category: category, user: user, correct_answers: 5, started_at: Time.current }
+    let!(:last_learning_session) { create :learning_session_detail, category: category, user: user, correct_answers: 10, started_at: Time.current }
     let(:response_json) do
       {
         data: {
           name: 'English',
           is_default: false,
+          total_points: 15,
+          last_session_points: 10,
           flash_cards: [
             {
-              id:flash_card.id,
-              face:flash_card.face,
-              back:flash_card.back,
+              id: flash_card.id,
+              face: flash_card.face,
+              back: flash_card.back,
             }
           ]
         }
@@ -49,7 +53,7 @@ resource "Categories" do
 
     let(:id) { category.id }
 
-    example "returns requested cards from selected category" do
+    example "returns category info and requested cards from selected category" do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
 
       do_request

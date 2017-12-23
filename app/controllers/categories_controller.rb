@@ -7,8 +7,16 @@ class CategoriesController < ApplicationController
 
   def show
     category = current_user.categories.find(params[:id])
+    details = LearningSessionDetailsForCategory.new(
+      category.learning_session_details.where(user: current_user).order(started_at: :asc)
+    ).execute
 
-    render json: CategoryCommonSerializer.new(category, category.flash_cards).to_json, status: :ok
+    render json: CategoryCommonSerializer.new(
+      category: category,
+      flash_cards: category.flash_cards,
+      total_points: details.total_points,
+      last_session_points: details.last_session_points
+    ).to_json, status: :ok
   end
 
   def create
