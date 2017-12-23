@@ -8,8 +8,11 @@ class LearningSessionDetailsForCategory
   end
 
   def execute
+    return self if learning_sessions.empty?
     @total_points = learning_sessions.reduce(0) do |total_points, learning_session|
-      total_points += learning_session.correct_answers
+      if learning_session.correct_answers.present?
+        total_points += learning_session.correct_answers
+      end
       total_points
     end
 
