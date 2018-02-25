@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(version: 20180116030023) do
     t.integer "show_times"
     t.integer "correct_times"
     t.index ["correct_times"], name: "index_flash_card_shows_on_correct_times"
-    t.index ["user_id", "flash_card_id"], name: "index_flash_card_shows_on_user_id_and_flash_card_id"
+    t.index ["flash_card_id"], name: "index_flash_card_shows_on_flash_card_id"
+    t.index ["user_id"], name: "index_flash_card_shows_on_user_id"
   end
 
   create_table "flash_cards", force: :cascade do |t|
