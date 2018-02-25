@@ -47,6 +47,7 @@ resource "LearningSessions" do
   put 'learning_sessions/:id' do
     parameter :correct_answers, "Number of correct answers", scope: :learning_session_detail, required: true
     parameter :wrong_answers, "Number of wrong answers", scope: :learning_session_detail, required: true
+    parameter :flash_cards, "Status for each card", scope: :learning_session_detail, required: true
 
     let!(:learning_session_detail) { create :learning_session_detail, user: user, category: category }
     let(:id) { learning_session_detail.id }
@@ -54,7 +55,9 @@ resource "LearningSessions" do
       {
         learning_session_detail: {
           correct_answers: 4,
-          wrong_answers: 2}
+          wrong_answers: 2,
+          flash_cards: [{id: 1, status: true}, {id: 2, status: false}]
+        }
       }
     end
     let(:response_json) { {data: {message: 'Updated'}}.to_json }
