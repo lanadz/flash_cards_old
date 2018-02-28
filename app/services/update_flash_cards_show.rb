@@ -6,7 +6,7 @@ class UpdateFlashCardsShow
 
   def execute
     flash_cards_params.each do |flash_card_params|
-      correct_times = flash_card_params[:state] ? 1 : 0
+      correct_times = ActiveModel::Type::Boolean.new.cast(flash_card_params[:state]) ? 1 : 0
 
       flash_card_show = FlashCardShow.find_or_create_by!(
         flash_card_id: flash_card_params[:id],

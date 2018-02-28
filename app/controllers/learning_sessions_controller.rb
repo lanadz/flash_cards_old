@@ -12,6 +12,7 @@ class LearningSessionsController < ApplicationController
     learning_session_detail.update!(
       learning_session_detail_params.merge(finished_at: Time.current)
     )
+    UpdateFlashCardsShow.new(params[:learning_session_detail][:flash_cards], current_user).execute
     render json: {data: {message: 'Updated'}}, status: :ok
   end
 
