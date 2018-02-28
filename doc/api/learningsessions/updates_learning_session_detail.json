@@ -17,6 +17,12 @@
       "required": true,
       "name": "wrong_answers",
       "description": "Number of wrong answers"
+    },
+    {
+      "scope": "learning_session_detail",
+      "required": true,
+      "name": "flash_cards",
+      "description": "Status for each card"
     }
   ],
   "response_fields": [
@@ -25,8 +31,8 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "learning_sessions/247",
-      "request_body": "learning_session_detail[correct_answers]=4&learning_session_detail[wrong_answers]=2",
+      "request_path": "learning_sessions/34",
+      "request_body": "learning_session_detail[correct_answers]=4&learning_session_detail[wrong_answers]=2&learning_session_detail[flash_cards][][id]=1&learning_session_detail[flash_cards][][status]=true&learning_session_detail[flash_cards][][id]=2&learning_session_detail[flash_cards][][status]=false",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -43,8 +49,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"8bb1d80130a3437892f3b70ed3b0317e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "0da0d261-07f8-4947-b986-b83389ab82ab",
-        "X-Runtime": "0.024204",
+        "X-Request-Id": "1e9374f5-0e1b-4037-91ed-9f915fcc3726",
+        "X-Runtime": "0.016377",
         "Vary": "Origin",
         "Content-Length": "30"
       },
