@@ -4,7 +4,7 @@ RSpec.describe UpdateFlashCardsShow do
   let(:user) { create :user }
   let(:category) { create :category, user: user }
   let(:flash_cards) { create_list :flash_card, 2, category: category, user: user }
-  let!(:flash_cards_params) do
+  let(:flash_cards_params) do
     [
       {id: flash_cards.first.id, state: true},
       {id: flash_cards.last.id, state: false},
@@ -25,7 +25,9 @@ RSpec.describe UpdateFlashCardsShow do
   context 'Following shows of the cards' do
     describe '#execute' do
       it 'updates existing entries flash card show and sets correct_times and show time' do
+        expect(FlashCardShow.count).to eq 0
         subject.execute
+        expect(FlashCardShow.count).to eq 2
         subject.execute
         expect(FlashCardShow.count).to eq 2 # the number didn't change
 
