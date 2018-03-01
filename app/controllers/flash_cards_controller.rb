@@ -7,8 +7,9 @@ class FlashCardsController < ApplicationController
 
   def show
     flash_card = current_user.flash_cards.find(params[:id])
+    flash_card_show = FlashCardShow.find_by(user: current_user, flash_card: flash_card)
 
-    render json: FlashCardSerializer.new(flash_card).to_json
+    render json: FlashCardSerializer.new(flash_card, flash_card_show).to_json
   end
 
   def create
