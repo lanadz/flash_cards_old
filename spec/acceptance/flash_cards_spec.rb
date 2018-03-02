@@ -26,10 +26,13 @@ resource "FlashCards" do
         data: {
           id: flash_card.id,
           face: flash_card.face,
-          back: flash_card.back
+          back: flash_card.back,
+          correct_times: 1,
+          show_times: 2
         }
       }.to_json
     end
+    let!(:flash_card_show) { create :flash_card_show, show_times: 2, flash_card: flash_card, user: user }
     let(:id) { flash_card.id }
 
     example "returns requested card" do
@@ -63,7 +66,9 @@ resource "FlashCards" do
         data:
           {
             face: 'Face',
-            back: 'Back'
+            back: 'Back',
+            correct_times: 0,
+            show_times: 0
           }
       }.with_indifferent_access
     end
