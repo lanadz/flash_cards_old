@@ -6,11 +6,13 @@ resource "LearningSessions" do
 
   let(:user) { create :user }
   let(:category) { create :category, user: user }
-  let!(:flash_cards) { create :flash_card, category: category, user: user }
 
   post '/learning_sessions' do
     parameter :category_id, "Category ID", required: true
     parameter :include, "Array of resources to add, i.e. [flash_cards]"
+
+    let(:flash_card) { create :flash_card, category: category, user: user }
+    let!(:flash_card_show) { create :flash_card_show, flash_card: flash_card, user: user, show_times: 2 }
 
     let(:response_json) do
       {
@@ -21,9 +23,11 @@ resource "LearningSessions" do
           },
           cards: [
             {
-              id: flash_cards.id,
-              face: flash_cards.face,
-              back: flash_cards.back,
+              id: flash_card.id,
+              face: flash_card.face,
+              back: flash_card.back,
+              correct_times: 1,
+              show_times: 2
             }
           ]
         }

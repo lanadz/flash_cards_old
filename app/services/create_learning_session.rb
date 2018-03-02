@@ -6,6 +6,14 @@ class CreateLearningSession
 
   def execute
     cards = DefaultStrategy.new(flash_cards).cards
+    flash_card_shows = FlashCardShow.where(user: user).where(flash_card: cards)
+    combined_cards = cards.map do |card|
+      result = flash_card_shows.find { |flash_card_show| card.id == flash_card_show.flash_card_id }
+      card.attributes.merge(
+        "correct_times" => result&.correct_times || 0,
+        "show_times" => result&.show_times || 0
+      )
+    end
     {
       learning_session_details: LearningSessionDetail.create!(
         user: user,
@@ -13,7 +21,7 @@ class CreateLearningSession
         started_at: Time.current,
         cards_amount: cards.length
       ),
-      cards: cards
+      cards: combined_cards
     }
   end
 
