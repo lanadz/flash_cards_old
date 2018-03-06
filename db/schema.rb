@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306094528) do
+ActiveRecord::Schema.define(version: 20180306171220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180306094528) do
     t.bigint "flash_card_id"
     t.integer "show_times"
     t.integer "correct_times"
+    t.integer "box", default: 0
     t.index ["user_id", "flash_card_id"], name: "index_flash_card_shows_on_user_id_and_flash_card_id", unique: true
   end
 
