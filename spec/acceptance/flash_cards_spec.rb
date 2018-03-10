@@ -28,7 +28,8 @@ resource "FlashCards" do
           face: flash_card.face,
           back: flash_card.back,
           correct_times: 1,
-          show_times: 2
+          show_times: 2,
+          box: 1
         }
       }.to_json
     end
@@ -68,7 +69,8 @@ resource "FlashCards" do
             face: 'Face',
             back: 'Back',
             correct_times: 0,
-            show_times: 0
+            show_times: 0,
+            box: 0
           }
       }.with_indifferent_access
     end
