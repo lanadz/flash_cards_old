@@ -32,7 +32,7 @@
     {
       "request_method": "POST",
       "request_path": "/flash_cards",
-      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=258",
+      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=512",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -44,15 +44,15 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"id\": 305,\n    \"face\": \"Face\",\n    \"back\": \"Back\",\n    \"correct_times\": 0,\n    \"show_times\": 0\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"id\": 522,\n    \"face\": \"Face\",\n    \"back\": \"Back\",\n    \"correct_times\": 0,\n    \"show_times\": 0,\n    \"box\": 0\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"3ee235cdef8f56f54c96e0174d424406\"",
+        "ETag": "W/\"990037ab892b5af319e76fbd988ff3c1\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9cd264cc-aa35-4baf-8204-7dbb23035dde",
-        "X-Runtime": "0.010744",
+        "X-Request-Id": "afab1112-ce87-42e3-8a5b-23c2c092c19c",
+        "X-Runtime": "0.008680",
         "Vary": "Origin",
-        "Content-Length": "80"
+        "Content-Length": "88"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
