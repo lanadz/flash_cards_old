@@ -18,6 +18,7 @@ RSpec.describe UpdateFlashCardsShow do
         expect { subject.execute }.to change { FlashCardShow.count }.from(0).to(2)
         expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).correct_times).to eq 1
         expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).correct_times).to eq 0
+        expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).box).to eq 1
       end
     end
   end
@@ -33,8 +34,10 @@ RSpec.describe UpdateFlashCardsShow do
 
         expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).correct_times).to eq 2
         expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).show_times).to eq 2
+        expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).box).to eq 2
         expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).correct_times).to eq 0
         expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).show_times).to eq 2
+        expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).box).to eq 1
       end
     end
   end
