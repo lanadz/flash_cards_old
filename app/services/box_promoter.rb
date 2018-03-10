@@ -26,11 +26,7 @@ class BoxPromoter
   end
 
   def should_not_be_promoted
-    if current_box > 1
-      @result -= 1
-    else
-      @result = 1
-    end
+    @result = 1
   end
 
   attr_reader :current_box, :is_promoted
