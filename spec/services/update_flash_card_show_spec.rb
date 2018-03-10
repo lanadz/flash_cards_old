@@ -32,12 +32,15 @@ RSpec.describe UpdateFlashCardsShow do
         subject.execute
         expect(FlashCardShow.count).to eq 2 # the number didn't change
 
-        expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).correct_times).to eq 2
-        expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).show_times).to eq 2
-        expect(FlashCardShow.find_by(flash_card_id: flash_cards.first.id).box).to eq 2
-        expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).correct_times).to eq 0
-        expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).show_times).to eq 2
-        expect(FlashCardShow.find_by(flash_card_id: flash_cards.last.id).box).to eq 1
+        correct_answered_card = FlashCardShow.find_by(flash_card_id: flash_cards.first.id)
+        expect(correct_answered_card.correct_times).to eq 2
+        expect(correct_answered_card.show_times).to eq 2
+        expect(correct_answered_card.box).to eq 2
+
+        incorrect_answered_card = FlashCardShow.find_by(flash_card_id: flash_cards.last.id)
+        expect(incorrect_answered_card.correct_times).to eq 0
+        expect(incorrect_answered_card.show_times).to eq 2
+        expect(incorrect_answered_card.box).to eq 1
       end
     end
   end
