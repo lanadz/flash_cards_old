@@ -11,7 +11,8 @@ class CreateLearningSession
       result = flash_card_shows.find { |flash_card_show| card.id == flash_card_show.flash_card_id }
       card.attributes.merge(
         "correct_times" => result&.correct_times || 0,
-        "show_times" => result&.show_times || 0
+        "show_times" => result&.show_times || 0,
+        "box" => result&.box || 0
       )
     end
     {
