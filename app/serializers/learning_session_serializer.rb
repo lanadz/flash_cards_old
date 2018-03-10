@@ -16,7 +16,8 @@ class LearningSessionSerializer
             face: record["face"],
             back: record["back"],
             correct_times: record["correct_times"],
-            show_times: record["show_times"]
+            show_times: record["show_times"],
+            box: record["box"]
           }
         end
       }

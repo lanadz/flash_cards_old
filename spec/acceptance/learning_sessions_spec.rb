@@ -27,7 +27,8 @@ resource "LearningSessions" do
               face: flash_card.face,
               back: flash_card.back,
               correct_times: 1,
-              show_times: 2
+              show_times: 2,
+              box: 1
             }
           ]
         }

@@ -7,8 +7,9 @@ RSpec.describe CreateLearningSession do
   let!(:flash_card_show) { create :flash_card_show,
                                   user: user,
                                   flash_card: flash_card,
-                                  correct_times: 0,
-                                  show_times: 0 }
+                                  correct_times: 1,
+                                  show_times: 1,
+                                  box: 1}
   subject { described_class.new(category, user) }
   it 'fetches flash cards' do
     dbl = double(LearningSessionDetail)
@@ -18,7 +19,7 @@ RSpec.describe CreateLearningSession do
                                     cards: [
                                       flash_card
                                         .attributes
-                                        .merge({"correct_times" => 0, "show_times" => 0})
+                                        .merge({"correct_times" => 1, "show_times" => 1, "box" => 1})
                                     ]
                                   })
   end
