@@ -1,3 +1,4 @@
+# 1. Take 10 cards from box 0, to promote them all eventually to box 1
 class DefaultStrategy
   def initialize(flash_cards, number_of_cards = 10)
     @flash_cards = flash_cards
@@ -6,7 +7,7 @@ class DefaultStrategy
   end
 
   def cards
-    shuffle(length)
+    mixin_flash_card_show_info(shuffle)
   end
 
   private
@@ -19,10 +20,16 @@ class DefaultStrategy
               :cards_box_3,
               :cards_box_4
 
-  def shuffle(length)
-    ENV.fetch('BOX1').to_f
+  def shuffle
+    if cards_box_0.present?
+      cards_box_0.sample(number_of_cards)
+    else
+      flash_cards.sample(number_of_cards)
+    end
+  end
 
-    flash_cards.sample(length).map do |card|
+  def mixin_flash_card_show_info(cards)
+    cards.map do |card|
       card.attributes.merge(
         "correct_times" => card.flash_card_show&.correct_times || 0,
         "show_times" => card.flash_card_show&.show_times || 0,
@@ -46,8 +53,11 @@ class DefaultStrategy
     end
   end
 
-  def length
-    number_of_cards > flash_cards.length ? flash_cards.length : number_of_cards
+  def cards_number_for_box(box_number)
+    if box_number < ENV.fetch('BOX_NUMBER')
+      (number_of_cards * ENV.fetch("BOX#{box_number}").to_f).floor
+    else
+      1
+    end
   end
-
 end
