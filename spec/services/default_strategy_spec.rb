@@ -8,10 +8,21 @@ RSpec.describe DefaultStrategy do
   describe '#cards' do
 
     context 'initially there are less than designed number of cards' do
-      let(:flash_cards) { [create(:flash_card, user: user, category: category)] }
+      let(:flash_card) { create(:flash_card, user: user, category: category) }
+      let(:flash_cards) { [flash_card] }
+      let(:cards_response) do
+        [flash_card
+           .attributes
+           .merge(
+             "correct_times" => 0,
+             "show_times" => 0,
+             "box" => 0
+           )
+        ]
+      end
 
       it 'fetches 1 flash card only' do
-        expect(subject.cards).to eq flash_cards
+        expect(subject.cards).to eq cards_response
       end
     end
 
