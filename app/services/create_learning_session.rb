@@ -5,7 +5,7 @@ class CreateLearningSession
   end
 
   def execute
-    flash_cards_with_shows = flash_cards.includes(:flash_card_show)
+    flash_cards_with_shows = flash_cards.includes(:flash_card_shows)#.where('flash_cards_shows.user_id': user.id)
 
     cards = DefaultStrategy.new(flash_cards_with_shows).cards
 

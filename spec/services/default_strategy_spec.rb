@@ -39,7 +39,7 @@ RSpec.describe DefaultStrategy do
         cards = Array.new
         10.times do |i|
           flash_card = build :flash_card, id: i, user: user, category: category
-          flash_card.stub_chain(:flash_card_show, :box).and_return(nil)
+          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(nil)
           cards << flash_card
         end
         cards
@@ -49,7 +49,7 @@ RSpec.describe DefaultStrategy do
         cards = Array.new
         10.times do |i|
           flash_card = build :flash_card, id: i + 10, user: user, category: category
-          flash_card.stub_chain(:flash_card_show, :box).and_return(1)
+          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(1)
           cards << flash_card
         end
         cards
@@ -59,7 +59,7 @@ RSpec.describe DefaultStrategy do
         cards = Array.new
         10.times do |i|
           flash_card = build :flash_card, id: i + 10, user: user, category: category
-          flash_card.stub_chain(:flash_card_show, :box).and_return(2)
+          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(2)
           cards << flash_card
         end
         cards
@@ -69,7 +69,7 @@ RSpec.describe DefaultStrategy do
         cards = Array.new
         10.times do |i|
           flash_card = build :flash_card, id: i + 20, user: user, category: category
-          flash_card.stub_chain(:flash_card_show, :box).and_return(3)
+          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(3)
           cards << flash_card
         end
         cards
@@ -79,7 +79,7 @@ RSpec.describe DefaultStrategy do
         cards = Array.new
         10.times do |i|
           flash_card = build :flash_card, id: i + 30, user: user, category: category
-          flash_card.stub_chain(:flash_card_show, :box).and_return(4)
+          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(4)
           cards << flash_card
         end
         cards
@@ -102,31 +102,31 @@ RSpec.describe DefaultStrategy do
   context 'move cards to boxes correctly' do
     let(:card_box_0) do
       flash_card = build :flash_card, id: 1, user: user, category: category
-      flash_card.stub_chain(:flash_card_show, :box).and_return(nil)
+      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(nil)
       flash_card
     end
 
     let(:card_box_1) do
       flash_card = build :flash_card, id: 2, user: user, category: category
-      flash_card.stub_chain(:flash_card_show, :box).and_return(1)
+      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(1)
       flash_card
     end
 
     let(:card_box_2) do
       flash_card = build :flash_card, id: 3, user: user, category: category
-      flash_card.stub_chain(:flash_card_show, :box).and_return(2)
+      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(2)
       flash_card
     end
 
     let(:card_box_3) do
       flash_card = build :flash_card, id: 4, user: user, category: category
-      flash_card.stub_chain(:flash_card_show, :box).and_return(3)
+      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(3)
       flash_card
     end
 
     let(:card_box_4) do
       flash_card = build :flash_card, id: 5, user: user, category: category
-      flash_card.stub_chain(:flash_card_show, :box).and_return(4)
+      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(4)
       flash_card
     end
 
