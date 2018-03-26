@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe CreateLearningSession do
   let(:user) { create :user }
   let(:category) { create :category, user: user }
-  let(:flash_card) { create :flash_card, user: user, category: category }
+  let(:flash_card) { create :flash_card, creator: user, category: category }
   let!(:flash_card_show) { create :flash_card_show,
                                   user: user,
                                   flash_card: flash_card,

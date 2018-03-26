@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
 
   has_many :categories
-  has_many :flash_cards
+  has_many :flash_cards, foreign_key: :creator_id
   has_many :learning_session_details
   has_many :flash_card_shows
 

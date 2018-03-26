@@ -4,7 +4,7 @@ require 'rspec_api_documentation/dsl'
 resource "FlashCards" do
   let(:user) {create :user}
   let(:category) {create :category, user: user}
-  let!(:flash_card) { create :flash_card, category: category, user: user }
+  let!(:flash_card) { create :flash_card, category: category, creator: user }
 
   get '/flash_cards' do
     let(:response_json) { {data: [{id: flash_card.id, face: '1+1', back: '=2'}]}.to_json }
