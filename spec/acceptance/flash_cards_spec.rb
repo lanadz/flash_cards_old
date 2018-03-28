@@ -4,7 +4,7 @@ require 'rspec_api_documentation/dsl'
 resource "FlashCards" do
   let(:user) {create :user}
   let(:category) {create :category, user: user}
-  let!(:flash_card) { create :flash_card, category: category, user: user }
+  let!(:flash_card) { create :flash_card, category: category, creator: user }
 
   get '/flash_cards' do
     let(:response_json) { {data: [{id: flash_card.id, face: '1+1', back: '=2'}]}.to_json }
@@ -77,8 +77,9 @@ resource "FlashCards" do
 
     example "creates and returns card" do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
-
-      do_request(params)
+      expect(FlashCardShow.count).to eq 0
+      expect { do_request(params) }.to change { FlashCard.count }.by 1
+      expect(FlashCardShow.count).to eq 1
       response_obj[:data][:id] = FlashCard.last.id
       expect(status).to eq 201
       expect(JSON.parse(response_body)).to eq response_obj

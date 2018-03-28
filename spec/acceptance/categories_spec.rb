@@ -30,7 +30,7 @@ resource "Categories" do
   get '/categories/:id' do
     parameter :id, 'ID of category', required: true
 
-    let!(:flash_card) { create :flash_card, user: user, category: category }
+    let!(:flash_card) { create :flash_card, creator: user, category: category }
     let!(:learning_sessions) { create :learning_session_detail, category: category, user: user, correct_answers: 5, started_at: Time.current }
     let!(:last_learning_session) { create :learning_session_detail, category: category, user: user, correct_answers: 10, started_at: Time.current }
     let(:response_json) do

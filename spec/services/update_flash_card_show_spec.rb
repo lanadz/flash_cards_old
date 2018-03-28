@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe UpdateFlashCardsShow do
   let(:user) { create :user }
   let(:category) { create :category, user: user }
-  let(:flash_cards) { create_list :flash_card, 2, category: category, user: user }
+  let(:flash_cards) { create_list :flash_card, 2, category: category, creator: user }
   let(:flash_cards_params) do
     [
       {id: flash_cards.first.id, state: true},
