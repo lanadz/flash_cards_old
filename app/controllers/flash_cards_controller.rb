@@ -13,16 +13,12 @@ class FlashCardsController < ApplicationController
   end
 
   def create
-    flash_card = current_user.flash_cards.new(flash_card_params).tap { |flash_crd| flash_crd.creator_id = current_user.id }
-
-    if flash_card_params[:category_id].nil?
-      flash_card.category = current_user.categories.find_by_is_default(true) || current_user.categories.create(name: "General", is_default: true)
-    end
-
-    if flash_card.save
+    flash_card_repo = FlashCard::Repo.new(params: flash_card_params, creator: current_user).execute
+    flash_card = flash_card_repo.flash_card
+    if flash_card.present?
       render json: FlashCardSerializer.new(flash_card).to_json, status: :created
     else
-      render json: ErrorSerializer.new(flash_card.errors).to_json, status: :unprocessable_entity
+      render json: ErrorSerializer.new(flash_card_repo.errors).to_json, status: :unprocessable_entity
     end
   end
 

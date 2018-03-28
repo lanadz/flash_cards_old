@@ -77,8 +77,9 @@ resource "FlashCards" do
 
     example "creates and returns card" do
       header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
-
-      do_request(params)
+      expect(FlashCardShow.count).to eq 0
+      expect { do_request(params) }.to change { FlashCard.count }.by 1
+      expect(FlashCardShow.count).to eq 1
       response_obj[:data][:id] = FlashCard.last.id
       expect(status).to eq 201
       expect(JSON.parse(response_body)).to eq response_obj
