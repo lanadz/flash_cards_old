@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/flash_cards/520",
+      "request_path": "/flash_cards/1646",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -30,15 +30,15 @@
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"id\": 520,\n    \"face\": \"1+1\",\n    \"back\": \"=2\",\n    \"correct_times\": 1,\n    \"show_times\": 2,\n    \"box\": 1\n  }\n}",
+      "response_body": "{\n  \"data\": {\n    \"id\": 1646,\n    \"face\": \"1+1\",\n    \"back\": \"=2\",\n    \"correct_times\": 1,\n    \"show_times\": 2,\n    \"box\": 1\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"c172b67d8e3ff0c074fcf2ddcc018a26\"",
+        "ETag": "W/\"b9b3b7d03d00822ccc64c4cea4942b95\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "10b7a202-1bd4-41d1-a8b5-92ef69621d2e",
-        "X-Runtime": "0.006632",
+        "X-Request-Id": "b799df19-7e82-400b-80d7-09640449efdf",
+        "X-Runtime": "0.009159",
         "Vary": "Origin",
-        "Content-Length": "85"
+        "Content-Length": "86"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
