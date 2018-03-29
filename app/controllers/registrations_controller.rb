@@ -2,15 +2,15 @@ class RegistrationsController < ApplicationController
   skip_before_action :require_login
 
   def create
-    user = User.new(user_params)
+    user_repo = User::Repo.new(params: user_params).execute
 
-    if user.save
-      CreateToken.new(user).execute
-      jwt_token = JWT.encode({ data: user.auth_token }, ENV['JWT_SECRET'])
+    if user_repo.user.valid?
+      CreateToken.new(user_repo.user).execute
+      jwt_token = JWT.encode({ data: user_repo.user.auth_token }, ENV['JWT_SECRET'])
 
-      render json: AuthorisationSerializer.new(user, jwt_token).to_json, status: :created
+      render json: AuthorisationSerializer.new(user_repo.user, jwt_token).to_json, status: :created
     else
-      render json: ErrorSerializer.new(user.errors).to_json, status: :unprocessable_entity
+      render json: ErrorSerializer.new(user_repo.errors).to_json, status: :unprocessable_entity
     end
   end
 

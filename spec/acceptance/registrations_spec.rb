@@ -34,7 +34,9 @@ resource "Registrations" do
       end
 
       example 'creates new user' do
+        expect(Category.count).to eq 0
         expect{do_request(params)}.to change{User.count}.from(0).to(1)
+        expect(Category.count).to eq 1
 
         response_obj[:data][:token][:expires_at] = User.last.auth_token_expired_at.iso8601(3)
         response_obj[:data][:token][:token] = jwt_encode(User.last.auth_token)
