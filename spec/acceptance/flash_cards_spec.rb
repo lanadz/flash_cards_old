@@ -49,7 +49,7 @@ resource "FlashCards" do
   post '/flash_cards' do
     parameter :face, 'Front side of card', scope: :flash_card, required: true
     parameter :back, 'Back side of card', scope: :flash_card, required: true
-    parameter :category_id, 'Category ID', scope: :flash_card, required: false
+    parameter :category_id, 'Category ID', scope: :flash_card, required: true
 
     let(:params) do
       {

@@ -1,6 +1,6 @@
 class FlashCard
   class Repo
-    attr_reader :errors, :flash_card
+    attr_reader :errors, :flash_card, :success
 
     def initialize(params:, creator:)
       @params = params
@@ -9,25 +9,22 @@ class FlashCard
       @flash_card = nil
       @flash_card_show = nil
       @errors = Array.new
+      @success = true
     end
 
     def execute
-      begin
-        FlashCard.transaction do
-          @flash_card = creator.flash_cards.new(params)
-          set_category!(flash_card)
+      FlashCard.transaction do
+        @flash_card = creator.flash_cards.new(params)
+        set_category!(flash_card)
 
-          if flash_card.save
-            @flash_card_show = flash_card.flash_card_shows.create(user: creator)
-          else
-            raise ActiveRecord::Rollback
-          end
-        end
-      rescue ActiveRecord::Rollback
-        @errors << flash_card.errors if flash_card.errors.present?
-        @errors << flash_card_show.errors if flash_card_show.errors.present?
+        flash_card.save!
+        @flash_card_show = flash_card.flash_card_shows.create!(user: creator)
       end
-
+      self
+    rescue
+      @success = false
+      @errors << flash_card.errors if flash_card.errors.present?
+      @errors << flash_card_show.errors if flash_card_show.present? && flash_card_show.errors.present?
       self
     end
 
@@ -41,7 +38,7 @@ class FlashCard
 
     def set_category!(flash_card)
       if flash_card.category_id.nil?
-        flash_card.category = creator.categories.find_by_is_default(true) || creator.categories.create(name: "General", is_default: true)
+        flash_card.category = creator.categories.find_by_is_default(true)
       end
     end
   end
