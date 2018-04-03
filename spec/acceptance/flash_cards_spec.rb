@@ -84,6 +84,35 @@ resource "FlashCards" do
       expect(status).to eq 201
       expect(JSON.parse(response_body)).to eq response_obj
     end
+
+    context 'params are missing' do
+      let(:params) do
+        {
+          flash_card:
+            {
+              face: 'Face'
+            }
+        }
+      end
+
+      let(:response_json) do
+        {
+          errors:
+            {
+              category: ["must exist"],
+              back: ["is reserved"]
+            }
+        }.to_json
+      end
+
+      example "doesnt create card" do
+        header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
+        expect { do_request(params) }.to change { FlashCard.count }.by 0
+        expect(FlashCardShow.count).to eq 0
+        expect(status).to eq 422
+        expect(response_body).to eq response_json
+      end
+    end
   end
 
   delete '/flash_cards/:id' do
