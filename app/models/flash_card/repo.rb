@@ -1,6 +1,7 @@
 class FlashCard
   class Repo
-    attr_reader :errors, :flash_card, :success
+    attr_reader :errors, :flash_card, :success, :flash_card_show
+
 
     def initialize
       @params = nil
@@ -18,7 +19,11 @@ class FlashCard
         @flash_card = creator.flash_cards.new(params)
 
         flash_card.save!
-        @flash_card_show = flash_card.flash_card_shows.create!(user: creator)
+        @flash_card_show = flash_card.flash_card_shows.create!(
+          user: creator,
+          show_times: 0,
+          correct_times: 0
+        )
       end
       self
     rescue
@@ -31,8 +36,7 @@ class FlashCard
 
     attr_reader :params,
                 :creator,
-                :category,
-                :flash_card_show
+                :category
 
     def set_params_for_create(params:, creator:)
       @params = params

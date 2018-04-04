@@ -7,9 +7,8 @@ class FlashCardsController < ApplicationController
 
   def create
     flash_card_repo = FlashCard::Repo.new.create(params: flash_card_params, creator: current_user)
-    flash_card = flash_card_repo.flash_card
     if flash_card_repo.success
-      render json: FlashCardSerializer.new(flash_card).to_json, status: :created
+      render json: FlashCardSerializer.new(flash_card_repo).to_json, status: :created
     else
       render json: ErrorSerializer.new(flash_card_repo.errors).to_json, status: :unprocessable_entity
     end
