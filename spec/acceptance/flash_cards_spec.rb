@@ -19,33 +19,6 @@ resource "FlashCards" do
     end
   end
 
-  get '/flash_cards/:id' do
-    parameter :id, 'ID of flash card', required: true
-    let(:response_json) do
-      {
-        data: {
-          id: flash_card.id,
-          face: flash_card.face,
-          back: flash_card.back,
-          correct_times: 1,
-          show_times: 2,
-          box: 1
-        }
-      }.to_json
-    end
-    let!(:flash_card_show) { create :flash_card_show, show_times: 2, flash_card: flash_card, user: user }
-    let(:id) { flash_card.id }
-
-    example "returns requested card" do
-      header 'Authorization', "Bearer #{jwt_encode(user.auth_token)}"
-
-      do_request
-
-      expect(status).to eq 200
-      expect(response_body).to eq response_json
-    end
-  end
-
   post '/flash_cards' do
     parameter :face, 'Front side of card', scope: :flash_card, required: true
     parameter :back, 'Back side of card', scope: :flash_card, required: true
