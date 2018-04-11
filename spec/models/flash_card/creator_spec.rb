@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe FlashCard::Repo do
+RSpec.describe FlashCard::Creator do
   let(:user) { create :user }
   let(:category) { create :category, user: user }
   let(:params) { {face: 'Face', back: 'Back', category_id: category.id} }

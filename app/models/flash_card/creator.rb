@@ -1,5 +1,5 @@
 class FlashCard
-  class Repo
+  class Creator
     attr_reader :errors, :flash_card, :success, :flash_card_show
 
 
