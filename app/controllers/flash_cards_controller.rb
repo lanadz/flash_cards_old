@@ -6,11 +6,12 @@ class FlashCardsController < ApplicationController
   end
 
   def create
-    flash_card_repo = FlashCard::Creator.new.create(params: flash_card_params, creator: current_user)
-    if flash_card_repo.success
-      render json: FlashCardSerializer.new(flash_card_repo).to_json, status: :created
+    flash_card_creator = FlashCard::Creator.new
+    flash_card_creator.create(params: flash_card_params, creator: current_user)
+    if flash_card_creator.success
+      render json: FlashCardSerializer.new(flash_card_creator.flash_card).to_json, status: :created
     else
-      render json: ErrorSerializer.new(flash_card_repo.errors).to_json, status: :unprocessable_entity
+      render json: ErrorSerializer.new(flash_card_creator.errors).to_json, status: :unprocessable_entity
     end
   end
 
