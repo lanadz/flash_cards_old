@@ -7,15 +7,7 @@ class FlashCard
       @params = nil
       @creator = nil
       @category = nil
-      @flash_card = ValueObject.new(face: nil,
-                                    back: nil,
-                                    user_id: nil,
-                                    creator_id: nil,
-                                    show_times: nil,
-                                    correct_times: nil,
-                                    category_id: nil,
-                                    box: nil,
-                                    id: nil)
+      @flash_card = ValueObject.new
 
       @flash_card_show = nil
       @errors = nil

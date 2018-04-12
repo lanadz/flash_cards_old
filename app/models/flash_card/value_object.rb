@@ -10,15 +10,15 @@ class FlashCard
                 :show_times,
                 :box
 
-    def initialize(face:,
-                   back:,
-                   id:,
-                   user_id:,
-                   creator_id:,
-                   category_id:,
-                   correct_times:,
-                   show_times:,
-                   box:)
+    def initialize(face: nil,
+                   back: nil,
+                   id: nil,
+                   user_id: nil,
+                   creator_id: nil,
+                   category_id: nil,
+                   correct_times: nil,
+                   show_times: nil,
+                   box: nil)
 
       @id = id
       @face = face
