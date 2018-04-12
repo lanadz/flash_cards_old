@@ -1,10 +1,4 @@
 class FlashCardsController < ApplicationController
-  def index
-    flash_cards = current_user.flash_cards
-
-    render json: FlashCardsSerializer.new(flash_cards).to_json
-  end
-
   def create
     flash_card_creator = FlashCard::Creator.new
     flash_card_creator.create(params: flash_card_params, creator: current_user)

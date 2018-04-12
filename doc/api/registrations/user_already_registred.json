@@ -1,11 +1,17 @@
 {
-  "resource": "Sign in",
+  "resource": "Registrations",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/sessions",
-  "description": "wrong credentials",
+  "route": "/registrations",
+  "description": "user already registred",
   "explanation": null,
   "parameters": [
+    {
+      "scope": "registration",
+      "required": true,
+      "name": "name",
+      "description": "User's name"
+    },
     {
       "scope": "registration",
       "required": true,
@@ -25,8 +31,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/sessions",
-      "request_body": "signin[email]=user%40mail.com&signin[password]=wrong+password",
+      "request_path": "/registrations",
+      "request_body": "registration[name]=User&registration[email]=user%40mail.com&registration[password]=password",
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -35,16 +41,16 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
-      "response_status": 404,
-      "response_status_text": "Not Found",
-      "response_body": "{\n  \"errors\": {\n    \"detail\": \"Record not found\"\n  }\n}",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"errors\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "7bb42dd5-6915-4409-8a2d-2d1256c47dbc",
-        "X-Runtime": "0.004125",
+        "X-Request-Id": "f2ff61fb-635f-44fb-885f-135375640b3b",
+        "X-Runtime": "0.007473",
         "Vary": "Origin",
-        "Content-Length": "40"
+        "Content-Length": "13"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

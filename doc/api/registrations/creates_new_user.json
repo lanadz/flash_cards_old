@@ -1,11 +1,17 @@
 {
-  "resource": "Sign in",
+  "resource": "Registrations",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/sessions",
-  "description": "signins user",
+  "route": "/registrations",
+  "description": "creates new user",
   "explanation": null,
   "parameters": [
+    {
+      "scope": "registration",
+      "required": true,
+      "name": "name",
+      "description": "User's name"
+    },
     {
       "scope": "registration",
       "required": true,
@@ -25,8 +31,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/sessions",
-      "request_body": "signin[email]=user%40mail.com&signin[password]=password",
+      "request_path": "/registrations",
+      "request_body": "registration[name]=User&registration[email]=user%40mail.com&registration[password]=password",
       "request_headers": {
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -35,15 +41,15 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
-      "response_status": 200,
-      "response_status_text": "OK",
-      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"User\",\n      \"email\": \"user@mail.com\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiTlBDbHdFem1fUUhIZVpSNDA0NzJsU0hyTmJCa2pNLXFHOWY1TlBYQzdUQSJ9.CrRUIl8Ej1gtGq3Eu06WS6JM3k5FZGYO-oQ60Dla64w\",\n      \"expires_at\": \"2018-04-12T13:51:10.310Z\"\n    }\n  }\n}",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"data\": {\n    \"user\": {\n      \"name\": \"User\",\n      \"email\": \"user@mail.com\"\n    },\n    \"token\": {\n      \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoiQ2steHZTeGJDbjJOcVY0bU94UFhJamdSd3EyYWstZlBoNjk3V1JVUGZzbyJ9.KY81kqK6lV2zwGi-IXxXhzviNhPnjSsaQbXtEjjL7sc\",\n      \"expires_at\": \"2018-04-12T13:51:10.414Z\"\n    }\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"6cbabbdfc5f2c6bced1be85b98cb8843\"",
+        "ETag": "W/\"df4934e948949d88919214caec9b0772\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "9356dc80-525e-4cc6-a289-ec29a2fd25f8",
-        "X-Runtime": "0.014439",
+        "X-Request-Id": "7aa15580-4480-481a-adde-7a7f4d66ba58",
+        "X-Runtime": "0.017815",
         "Vary": "Origin",
         "Content-Length": "255"
       },

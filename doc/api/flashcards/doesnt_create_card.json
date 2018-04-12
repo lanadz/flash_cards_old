@@ -3,7 +3,7 @@
   "resource_explanation": null,
   "http_method": "POST",
   "route": "/flash_cards",
-  "description": "creates and returns card",
+  "description": "doesnt create card",
   "explanation": null,
   "parameters": [
     {
@@ -32,7 +32,7 @@
     {
       "request_method": "POST",
       "request_path": "/flash_cards",
-      "request_body": "flash_card[face]=Face&flash_card[back]=Back&flash_card[category_id]=3546",
+      "request_body": "flash_card[face]=Face",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -42,17 +42,16 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
-      "response_status": 201,
-      "response_status_text": "Created",
-      "response_body": "{\n  \"data\": {\n    \"id\": 3246,\n    \"face\": \"Face\",\n    \"back\": \"Back\",\n    \"correct_times\": 0,\n    \"show_times\": 0,\n    \"box\": 0\n  }\n}",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"errors\": {\n    \"category\": [\n      \"must exist\"\n    ],\n    \"back\": [\n      \"is reserved\"\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"da16db8885a556cb3fbb9e8ede60b5ad\"",
-        "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "a3139d02-6244-4da5-8bfa-f843be6a0b9c",
-        "X-Runtime": "0.023833",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "16353335-c9d8-46d0-99f5-1da1ebaf90c8",
+        "X-Runtime": "0.008502",
         "Vary": "Origin",
-        "Content-Length": "89"
+        "Content-Length": "61"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
