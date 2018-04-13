@@ -1,8 +1,7 @@
 class FlashCardsController < ApplicationController
   def create
-    flash_card_creator = FlashCard::Creator.new
-    flash_card_creator.create(params: flash_card_params, creator: current_user)
-    if flash_card_creator.success
+    flash_card_creator = FlashCard::Creator.new(params: flash_card_params, creator: current_user)
+    if flash_card_creator.create
       render json: FlashCardSerializer.new(flash_card_creator.flash_card).to_json, status: :created
     else
       render json: ErrorSerializer.new(flash_card_creator.errors).to_json, status: :unprocessable_entity
