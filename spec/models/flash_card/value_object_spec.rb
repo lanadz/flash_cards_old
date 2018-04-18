@@ -39,11 +39,11 @@ RSpec.describe FlashCard::ValueObject do
 
   describe 'equal?' do
     it 'compares two eq objects' do
-      expect(subject).to be_equal described_class.new(params)
+      expect(subject).to eq described_class.new(params)
     end
 
     it 'compares two objects that are not eq' do
-      expect(subject).not_to be_equal described_class.new(other_params)
+      expect(subject).not_to eq described_class.new(other_params)
     end
   end
 end

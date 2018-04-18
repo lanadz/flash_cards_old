@@ -18,7 +18,7 @@ RSpec.describe FlashCard::Creator do
                             category_id: category.id,
                             box: 0,
                             id: FlashCard.last.id)
-      expect(subject.flash_card).to be_equal obj
+      expect(subject.flash_card).to eq obj
     end
   end
 

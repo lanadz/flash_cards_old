@@ -1,5 +1,6 @@
 class FlashCard
   class ValueObject
+    include Comparable
     attr_reader :face,
                 :back,
                 :id,
@@ -31,7 +32,7 @@ class FlashCard
       @box = box
     end
 
-    def equal?(other)
+    def ==(other)
       id == other.id &&
         face == other.face &&
         back == other.back &&
