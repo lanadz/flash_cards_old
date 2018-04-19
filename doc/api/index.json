@@ -53,18 +53,11 @@
           "method": "delete"
         },
         {
-          "description": "returns all created cards",
-          "link": "flashcards/returns_all_created_cards.json",
+          "description": "doesnt create card",
+          "link": "flashcards/doesnt_create_card.json",
           "groups": "all",
           "route": "/flash_cards",
-          "method": "get"
-        },
-        {
-          "description": "returns requested card",
-          "link": "flashcards/returns_requested_card.json",
-          "groups": "all",
-          "route": "/flash_cards/:id",
-          "method": "get"
+          "method": "post"
         }
       ]
     },
@@ -85,6 +78,26 @@
           "groups": "all",
           "route": "learning_sessions/:id",
           "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "creates new user",
+          "link": "registrations/creates_new_user.json",
+          "groups": "all",
+          "route": "/registrations",
+          "method": "post"
+        },
+        {
+          "description": "user already registred",
+          "link": "registrations/user_already_registred.json",
+          "groups": "all",
+          "route": "/registrations",
+          "method": "post"
         }
       ]
     },

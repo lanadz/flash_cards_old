@@ -12,12 +12,12 @@ class LearningSessionSerializer
         },
         cards: learning_session[:cards].map do |record|
           {
-            id: record["id"],
-            face: record["face"],
-            back: record["back"],
-            correct_times: record["correct_times"],
-            show_times: record["show_times"],
-            box: record["box"]
+            id: record.id,
+            face: record.face,
+            back: record.back,
+            correct_times: record.correct_times,
+            show_times: record.show_times,
+            box: record.box
           }
         end
       }

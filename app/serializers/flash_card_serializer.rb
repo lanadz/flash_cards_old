@@ -1,11 +1,11 @@
 class FlashCardSerializer
-  def initialize(flash_card, flash_card_show = nil)
+  def initialize(flash_card)
     @face = flash_card.face
     @back = flash_card.back
     @id = flash_card.id
-    @show_times = flash_card_show&.show_times
-    @correct_times = flash_card_show&.correct_times
-    @box = flash_card_show&.box
+    @show_times = flash_card.show_times
+    @correct_times = flash_card.correct_times
+    @box = flash_card.box
   end
 
   def to_json(options = {})
@@ -25,17 +25,5 @@ class FlashCardSerializer
 
   private
 
-  def correct_times
-    @correct_times.nil? ? 0 : @correct_times
-  end
-
-  def show_times
-    @show_times.nil? ? 0 : @show_times
-  end
-
-  def box
-    @box.nil? ? 0 : @box
-  end
-
-  attr_reader :face, :back, :id
+  attr_reader :face, :back, :id, :correct_times, :show_times, :box
 end

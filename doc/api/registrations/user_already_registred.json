@@ -1,16 +1,28 @@
 {
-  "resource": "Categories",
+  "resource": "Registrations",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "categories",
-  "description": "doesnt create category without name provided",
+  "route": "/registrations",
+  "description": "user already registred",
   "explanation": null,
   "parameters": [
     {
-      "scope": "category",
+      "scope": "registration",
       "required": true,
       "name": "name",
-      "description": "Name of category"
+      "description": "User's name"
+    },
+    {
+      "scope": "registration",
+      "required": true,
+      "name": "email",
+      "description": "User's email"
+    },
+    {
+      "scope": "registration",
+      "required": true,
+      "name": "password",
+      "description": "User's password"
     }
   ],
   "response_fields": [
@@ -19,10 +31,9 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "categories",
-      "request_body": "category[name]=",
+      "request_path": "/registrations",
+      "request_body": "registration[name]=User&registration[email]=user%40mail.com&registration[password]=password",
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
         "Content-Type": "application/x-www-form-urlencoded",
         "Cookie": ""
@@ -32,14 +43,14 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"errors\": {\n    \"name\": [\n      \"can't be blank\"\n    ]\n  }\n}",
+      "response_body": "{\n  \"errors\": [\n\n  ]\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f2ed5191-eca9-43a6-9ec7-0ff86ae54a11",
-        "X-Runtime": "0.013788",
+        "X-Request-Id": "577307d8-8e7f-4158-a025-719c9ec95af1",
+        "X-Runtime": "0.009961",
         "Vary": "Origin",
-        "Content-Length": "38"
+        "Content-Length": "13"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

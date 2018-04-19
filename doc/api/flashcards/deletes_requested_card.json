@@ -18,7 +18,7 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "/flash_cards/1649",
+      "request_path": "/flash_cards/3852",
       "request_body": null,
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
@@ -36,8 +36,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"0697849b9093f0dca30514289baa16e8\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "1df22a0b-8d72-4cb5-8564-ae957e26f783",
-        "X-Runtime": "0.007259",
+        "X-Request-Id": "1618ca91-f181-44a9-88b9-a06609b5c53f",
+        "X-Runtime": "0.006796",
         "Vary": "Origin",
         "Content-Length": "30"
       },
