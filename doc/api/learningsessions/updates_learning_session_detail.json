@@ -31,8 +31,8 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "learning_sessions/411",
-      "request_body": "learning_session_detail[correct_answers]=4&learning_session_detail[wrong_answers]=2&learning_session_detail[flash_cards][][id]=525&learning_session_detail[flash_cards][][state]=true&learning_session_detail[flash_cards][][id]=526&learning_session_detail[flash_cards][][state]=false",
+      "request_path": "learning_sessions/2941",
+      "request_body": "learning_session_detail[correct_answers]=4&learning_session_detail[wrong_answers]=2&learning_session_detail[flash_cards][][id]=3854&learning_session_detail[flash_cards][][state]=true&learning_session_detail[flash_cards][][id]=3855&learning_session_detail[flash_cards][][state]=false",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -49,8 +49,8 @@
         "Content-Type": "application/json; charset=utf-8",
         "ETag": "W/\"8bb1d80130a3437892f3b70ed3b0317e\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "0ca99d4d-c4ca-4767-9409-b2aa673203f2",
-        "X-Runtime": "0.039938",
+        "X-Request-Id": "e9ddde17-90f0-4bf8-912b-e591f2a8dc37",
+        "X-Runtime": "0.033090",
         "Vary": "Origin",
         "Content-Length": "30"
       },

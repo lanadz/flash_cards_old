@@ -9,7 +9,7 @@ class DefaultStrategy
   end
 
   def cards
-    mixin_flash_card_show_info(shuffle)
+    shuffle
   end
 
   private
@@ -30,16 +30,6 @@ class DefaultStrategy
     end
   end
 
-  def mixin_flash_card_show_info(cards)
-    cards.map do |card|
-      card.attributes.merge(
-        "correct_times" => card.flash_card_shows&.first&.correct_times || 0,
-        "show_times" => card.flash_card_shows&.first&.show_times || 0,
-        "box" => card.flash_card_shows&.first&.box || 0
-      )
-    end
-  end
-
   def move_cards_to_boxes
     @cards_box_0 = Array.new
     @cards_box_1 = Array.new
@@ -47,11 +37,11 @@ class DefaultStrategy
     @cards_box_3 = Array.new
     @cards_box_4 = Array.new
     flash_cards.each do |flash_card|
-      @cards_box_0 << flash_card if flash_card.flash_card_shows.first&.box.nil?
-      @cards_box_1 << flash_card if flash_card.flash_card_shows.first&.box == 1
-      @cards_box_2 << flash_card if flash_card.flash_card_shows.first&.box == 2
-      @cards_box_3 << flash_card if flash_card.flash_card_shows.first&.box == 3
-      @cards_box_4 << flash_card if flash_card.flash_card_shows.first&.box == 4
+      @cards_box_0 << flash_card if flash_card.box.nil?
+      @cards_box_1 << flash_card if flash_card.box == 1
+      @cards_box_2 << flash_card if flash_card.box == 2
+      @cards_box_3 << flash_card if flash_card.box == 3
+      @cards_box_4 << flash_card if flash_card.box == 4
     end
   end
 

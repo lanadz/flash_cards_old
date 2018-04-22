@@ -11,7 +11,7 @@ resource "LearningSessions" do
     parameter :category_id, "Category ID", required: true
     parameter :include, "Array of resources to add, i.e. [flash_cards]"
 
-    let(:flash_card) { create :flash_card, category: category, user: user }
+    let(:flash_card) { create :flash_card, category: category, creator: user }
     let!(:flash_card_show) { create :flash_card_show, flash_card: flash_card, user: user, show_times: 2 }
 
     let(:response_json) do
@@ -56,7 +56,7 @@ resource "LearningSessions" do
 
     let!(:learning_session_detail) { create :learning_session_detail, user: user, category: category }
     let(:id) { learning_session_detail.id }
-    let(:flash_cards) { create_list :flash_card, 2, category: category, user: user }
+    let(:flash_cards) { create_list :flash_card, 2, category: category, creator: user }
     let!(:params) do
       {
         learning_session_detail: {

@@ -1,16 +1,28 @@
 {
-  "resource": "Categories",
+  "resource": "FlashCards",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "categories",
-  "description": "doesnt create category without name provided",
+  "route": "/flash_cards",
+  "description": "doesnt create card",
   "explanation": null,
   "parameters": [
     {
-      "scope": "category",
+      "scope": "flash_card",
       "required": true,
-      "name": "name",
-      "description": "Name of category"
+      "name": "face",
+      "description": "Front side of card"
+    },
+    {
+      "scope": "flash_card",
+      "required": true,
+      "name": "back",
+      "description": "Back side of card"
+    },
+    {
+      "scope": "flash_card",
+      "required": true,
+      "name": "category_id",
+      "description": "Category ID"
     }
   ],
   "response_fields": [
@@ -19,8 +31,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "categories",
-      "request_body": "category[name]=",
+      "request_path": "/flash_cards",
+      "request_body": "flash_card[face]=Face",
       "request_headers": {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJkYXRhIjoidG9rZW5fdXNlciJ9.qmVqdD48Lo0TYgSDwMYDvbJ4_dhxMd5us1CjZGnQrZs",
         "Host": "example.org",
@@ -32,14 +44,14 @@
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"errors\": {\n    \"name\": [\n      \"can't be blank\"\n    ]\n  }\n}",
+      "response_body": "{\n  \"errors\": {\n    \"category\": [\n      \"must exist\"\n    ],\n    \"back\": [\n      \"is reserved\"\n    ]\n  }\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "f2ed5191-eca9-43a6-9ec7-0ff86ae54a11",
-        "X-Runtime": "0.013788",
+        "X-Request-Id": "b4cb4e57-24fb-4266-a5e0-874cc6005fda",
+        "X-Runtime": "0.009648",
         "Vary": "Origin",
-        "Content-Length": "38"
+        "Content-Length": "61"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
