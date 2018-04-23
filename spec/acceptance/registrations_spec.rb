@@ -47,7 +47,7 @@ resource "Registrations" do
 
 
       example 'user already registred' do
-        create(:user)
+        create(:user, email: 'user@mail.com')
         expect{do_request(params)}.not_to change{User.count}
 
         expect(status).to eq 422

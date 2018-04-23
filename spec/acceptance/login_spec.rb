@@ -11,7 +11,7 @@ resource "Sign in" do
     let(:params) do
       {
         signin: {
-          email: 'user@mail.com',
+          email: user.email,
           password: 'password'
         }
       }
@@ -22,7 +22,7 @@ resource "Sign in" do
         data: {
           user: {
             name: 'User',
-            email: 'user@mail.com',
+            email: user.email,
           },
           token: {
             token: "don't know yet",
