@@ -48,5 +48,13 @@ RSpec.describe FlashCard::Box do
         expect(cards).to include(*subject.take(10))
       end
     end
+
+    describe '#add' do
+      it 'adds card to box' do
+        card = FlashCard::ValueObject.new(face: "Face 21", box: 0, id: 22)
+        expect{subject.add(card)}.to change{subject.cards.count}.by 1
+        expect(subject.cards).to include card
+      end
+    end
   end
 end
