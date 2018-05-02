@@ -17,6 +17,10 @@ class FlashCard
       cards.sample(amount)
     end
 
+    def has_cards?
+      cards.present?
+    end
+
     def ==(other)
       cards == other.cards && level == other.level
     end

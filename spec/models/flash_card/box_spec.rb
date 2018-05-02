@@ -56,5 +56,20 @@ RSpec.describe FlashCard::Box do
         expect(subject.cards).to include card
       end
     end
+
+    describe '#has_cards?' do
+      context 'there are cards' do
+        it 'returns true' do
+          expect(subject.has_cards?).to be_truthy
+        end
+      end
+
+      context 'there are no cards' do
+        let(:cards) { [] }
+        it 'returns false' do
+          expect(subject.has_cards?).to be_falsey
+        end
+      end
+    end
   end
 end
