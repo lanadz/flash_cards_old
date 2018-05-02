@@ -28,5 +28,6 @@ class CardsToBoxOrganizer
         @box_4.add(card)
       end
     end
+    self
   end
 end
