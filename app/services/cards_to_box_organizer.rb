@@ -1,5 +1,5 @@
 class CardsToBoxOrganizer
-  attr_reader :box_0, :box_1, :box_2, :box_3, :box_4
+  attr_reader :cards, :box_0, :box_1, :box_2, :box_3, :box_4
 
   alias_method :not_started, :box_0
   alias_method :mastered, :box_4
