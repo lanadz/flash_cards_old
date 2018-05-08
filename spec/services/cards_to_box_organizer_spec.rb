@@ -28,11 +28,9 @@ RSpec.describe CardsToBoxOrganizer do
   describe '#organize' do
     it "moves cards to boxes" do
       subject.organize
-      expect(subject.not_started).to eq FlashCard::Box.new(cards: [card_0], level: 0)
-      expect(subject.box_1).to eq FlashCard::Box.new(cards: [card_1], level: 1)
-      expect(subject.box_2).to eq FlashCard::Box.new(cards: [card_2], level: 2)
-      expect(subject.box_3).to eq FlashCard::Box.new(cards: [card_3], level: 3)
-      expect(subject.mastered).to eq FlashCard::Box.new(cards: [card_4], level: 4)
+      subject.each do |index, box|
+        expect(box).to eq FlashCard::Box.new(cards: [eval("card_#{index}")], level: index)
+      end
     end
   end
 end
