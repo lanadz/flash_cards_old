@@ -2,22 +2,24 @@
 # 2. If cannot take 10 cards from box 0, take the remaining amount from the box 1
 
 class DefaultStrategy
-  def initialize(boxes, number_of_cards = 10)
-    @boxes = boxes
-    @number_of_cards = number_of_cards
+  BOX_FIRST = 0
+  BOX_LAST = 4
+
+  def initialize(box_organizer, number_of_cards = 10)
+    @box_organizer = box_organizer
+    @number_of_cards_in_session = number_of_cards
   end
 
   def cards
-    shuffle
-  end
-
-  private
-
-  def shuffle
-    if @boxes.box_0.has_cards?
-      @boxes.box_0.take(@number_of_cards)
-    else
-      @boxes.cards
+    selected_cards = []
+    number_of_needed_cards = @number_of_cards_in_session
+    @box_organizer.each do |_box_number, box|
+      cards = box.take(number_of_needed_cards)
+      number_of_needed_cards = number_of_needed_cards - cards.size
+      selected_cards.push(cards)
+      break if number_of_needed_cards.zero?
     end
+
+    selected_cards.flatten
   end
 end

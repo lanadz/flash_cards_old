@@ -1,134 +1,97 @@
 require 'rails_helper'
 
 RSpec.describe DefaultStrategy do
-  let(:user) { create :user}
-  let(:category) { create :category, user: user }
-  subject { described_class.new(flash_cards, 2) }
+  subject { described_class.new(box_organizer, 5).cards }
+  let(:box_organizer) { CardsToBoxOrganizer.new(cards).organize }
 
-  describe '#cards' do
-
-    context 'initially there are less than designed number of cards' do
-      let(:flash_cards) { [create(:flash_card, creator: user, category: category)] }
-
-      it 'fetches 1 flash card only' do
-        expect(subject.cards).to eq cards_response
-      end
+  let(:cards_for_box_0) do
+    (0...5).map do |index|
+      FlashCard::ValueObject.new(box: 0, id: index)
     end
+  end
 
-    context 'initially there are more than designed number of cards' do
-      let(:flash_cards) { create_list(:flash_card, 3, creator: user, category: category) }
-
-      it 'fetches designed number of flash cards only' do
-        expect(subject.cards.length).to eq 2
-      end
+  let(:cards_for_box_1) do
+    (5...10).map do |index|
+      FlashCard::ValueObject.new(box: 1, id: index)
     end
+  end
 
-    context 'shuffles cards correctly' do
-      let(:cards_box_0) do
-        cards = Array.new
-        10.times do |i|
-          flash_card = build :flash_card, id: i, user: user, category: category
-          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(nil)
-          cards << flash_card
-        end
-        cards
-      end
+  let(:cards_for_box_2) do
+    (10...15).map do |index|
+      FlashCard::ValueObject.new(box: 2, id: index)
+    end
+  end
 
-      let(:cards_box_1) do
-        cards = Array.new
-        10.times do |i|
-          flash_card = build :flash_card, id: i + 10, user: user, category: category
-          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(1)
-          cards << flash_card
-        end
-        cards
-      end
+  let(:cards_for_box_3) do
+    (15...20).map do |index|
+      FlashCard::ValueObject.new(box: 3, id: index)
+    end
+  end
 
-      let(:cards_box_2) do
-        cards = Array.new
-        10.times do |i|
-          flash_card = build :flash_card, id: i + 10, user: user, category: category
-          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(2)
-          cards << flash_card
-        end
-        cards
-      end
-
-      let(:cards_box_3) do
-        cards = Array.new
-        10.times do |i|
-          flash_card = build :flash_card, id: i + 20, user: user, category: category
-          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(3)
-          cards << flash_card
-        end
-        cards
-      end
-
-      let(:cards_box_4) do
-        cards = Array.new
-        10.times do |i|
-          flash_card = build :flash_card, id: i + 30, user: user, category: category
-          flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(4)
-          cards << flash_card
-        end
-        cards
-      end
-
-
-      let(:boxed_flash_cards) { cards_box_0 + cards_box_1 + cards_box_2 + cards_box_3 + cards_box_4 }
-
-      describe '#shuffle' do
-        # while there are cards in box 0, take them first
-        subject { described_class.new(boxed_flash_cards, 10) }
-        it 'selects 10 cards from box 0' do
-          expect(subject.send(:shuffle)).to match_array cards_box_0
-        end
-      end
+  let(:cards_for_box_4) do
+    (20...25).map do |index|
+      FlashCard::ValueObject.new(box: 4, id: index)
     end
   end
 
 
-  context 'move cards to boxes correctly' do
-    let(:card_box_0) do
-      flash_card = build :flash_card, id: 1, user: user, category: category
-      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(nil)
-      flash_card
+  describe '#cards' do
+    let(:cards) { cards_for_box_0 + cards_for_box_1 + cards_for_box_2 + cards_for_box_3 + cards_for_box_4 }
+
+    context 'there are enough cards in box 0' do
+      it 'selects cards from box 0' do
+        expect(subject).to match_array cards_for_box_0
+      end
     end
 
-    let(:card_box_1) do
-      flash_card = build :flash_card, id: 2, user: user, category: category
-      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(1)
-      flash_card
+    context 'selects all possible number of cards from box 0 and continue with box 1' do
+      let(:cards_for_box_0) do
+        (0...3).map do |index|
+          FlashCard::ValueObject.new(box: 0, id: index)
+        end
+      end
+      let(:cards) { cards_for_box_0 + cards_for_box_1 + cards_for_box_4 }
+      it 'selects cards' do
+        expect(subject.size).to eq(5)
+        expect(subject).to include(*cards_for_box_0)
+        cards_selected_from_box1 = subject - cards_for_box_0
+        cards_selected_from_box1.each do |card|
+          expect(cards_for_box_1).to include(card)
+        end
+      end
     end
 
-    let(:card_box_2) do
-      flash_card = build :flash_card, id: 3, user: user, category: category
-      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(2)
-      flash_card
-    end
+    context 'selects all possible number of cards from box 1 because there no cards in box 0 and continue with box 2 and then from 3 and so on' do
+      let(:cards_for_box_0) do
+        []
+      end
 
-    let(:card_box_3) do
-      flash_card = build :flash_card, id: 4, user: user, category: category
-      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(3)
-      flash_card
-    end
+      let(:cards_for_box_1) do
+        [FlashCard::ValueObject.new(box: 1, id: 1)]
+      end
 
-    let(:card_box_4) do
-      flash_card = build :flash_card, id: 5, user: user, category: category
-      flash_card.stub_chain(:flash_card_shows, :first, :box).and_return(4)
-      flash_card
-    end
+      let(:cards_for_box_2) do
+        (2..3).map do |index|
+          FlashCard::ValueObject.new(box: 2, id: index)
+        end
+      end
 
-    let(:boxed_flash_cards) { [card_box_0, card_box_1, card_box_2, card_box_3, card_box_4] }
+      let(:cards_for_box_3) do
+        [FlashCard::ValueObject.new(box: 3, id: 4)]
+      end
 
-    describe '#new' do
-      subject { described_class.new(boxed_flash_cards) }
-      it '#move_cards_to_boxes' do
-        expect(subject.send(:cards_box_0)).to eq [card_box_0]
-        expect(subject.send(:cards_box_1)).to eq [card_box_1]
-        expect(subject.send(:cards_box_2)).to eq [card_box_2]
-        expect(subject.send(:cards_box_3)).to eq [card_box_3]
-        expect(subject.send(:cards_box_4)).to eq [card_box_4]
+      let(:cards_for_box_4) do
+        [FlashCard::ValueObject.new(box: 4, id: 5)]
+      end
+
+      let(:cards) { cards_for_box_0 + cards_for_box_1 + cards_for_box_2 + cards_for_box_3 + cards_for_box_4 }
+      it 'selects cards' do
+        expect(subject.size).to eq(5)
+        expect(subject).to include(*cards_for_box_0)
+        expect(subject).to include(*cards_for_box_1)
+        expect(subject).to include(*cards_for_box_2)
+        expect(subject).to include(*cards_for_box_3)
+        expect(subject).to include(*cards_for_box_4)
       end
     end
   end
