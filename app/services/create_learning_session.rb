@@ -6,7 +6,9 @@ class CreateLearningSession
 
   def execute
     flash_cards = FlashCard::Finder.new(user: @user).find_by(category_id: @category.id)
-    cards = DefaultStrategy.new(flash_cards).cards
+
+    cards_to_boxes_organizer = CardsToBoxOrganizer.new(flash_cards).organize
+    cards = DefaultStrategy.new(cards_to_boxes_organizer).cards
     {
       learning_session_details: LearningSessionDetail.create!(
         user: @user,
