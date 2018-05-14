@@ -30,6 +30,8 @@ gem 'rack-cors'
 # A pure ruby implementation of the JWT standard
 gem 'jwt', '~> 2.1'
 
+gem 'rollbar'
+
 gem 'bcrypt'
 
 group :development, :test do
