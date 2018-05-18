@@ -3,6 +3,7 @@ class User
     attr_reader :errors, :user
 
     def initialize(params:)
+      params[:email] = params[:email].downcase
       @params = params
       @errors = Array.new
       @user = nil

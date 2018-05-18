@@ -11,7 +11,7 @@ resource "Sign in" do
     let(:params) do
       {
         signin: {
-          email: user.email,
+          email: user.email.upcase,
           password: 'password'
         }
       }

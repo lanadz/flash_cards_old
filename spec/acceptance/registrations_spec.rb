@@ -12,7 +12,7 @@ resource "Registrations" do
         {
           registration: {
             name: 'User',
-            email: 'user@mail.com',
+            email: 'User@mail.com',
             password: 'password'
           }
         }
