@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
   prepend_before_action :require_login
 
   rescue_from ActiveRecord::RecordNotFound do
-    render json: {errors: {detail: 'Record not found'}}, status: :not_found
+    render json: {errors: [{detail: 'Record not found'}]}, status: :not_found
   end
 
   rescue_from UnauthorizedException do
