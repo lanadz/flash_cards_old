@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :learning_session_detail do
     correct_answers nil
     wrong_answers nil
