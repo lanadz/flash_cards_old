@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.4.0"
+ruby "2.5.3"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,12 +8,12 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.19.0'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -37,11 +37,11 @@ gem 'bcrypt'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
+  gem "factory_bot_rails"
+  gem "factory_bot"
   gem 'pry'
   gem 'rspec_api_documentation', '~> 5.0.0'
-  gem 'apitome', '~> 0.1'
+  gem 'apitome', '~> 0.2'
   gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
