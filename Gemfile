@@ -41,7 +41,7 @@ group :development, :test do
   gem "factory_bot"
   gem 'pry'
   gem 'rspec_api_documentation', '~> 5.0.0'
-  gem 'apitome', '~> 0.1'
+  gem 'apitome', '~> 0.2'
   gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 

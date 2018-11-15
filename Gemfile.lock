@@ -180,7 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  apitome (~> 0.1)
+  apitome (~> 0.2)
   bcrypt
   byebug
   dotenv-rails
